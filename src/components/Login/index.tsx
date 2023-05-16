@@ -15,14 +15,14 @@ const Login = () => {
             <TitleLine />
           </TitleWrapper>
           <InputWarpper>
-            <ContentText>아이디</ContentText>
+            <p>아이디</p>
             <Input placeholder="아이디를 입력해주세요." />
-            <ContentText>비밀번호</ContentText>
+            <p>비밀번호</p>
             <Input placeholder="비밀번호를 입력해주세요." />
           </InputWarpper>
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
-            <CheckText>계정이 없으신가요? </CheckText>
+            <div>계정이 없으신가요? </div>
             <SignupText>회원가입하기</SignupText>
           </CheckWrapper>
         </Content>
@@ -65,6 +65,15 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 43px;
+  p {
+    width: 288px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: pretendard;
+    display: flex;
+    margin-top: 30px;
+  }
 `;
 const TitleWrapper = styled.div`
   display: flex;
@@ -88,16 +97,6 @@ const TitleLine = styled.div`
 
 const InputWarpper = styled.div`
   width: 288px;
-`;
-
-const ContentText = styled.div`
-  width: 288px;
-  height: 30px;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: pretendard;
-  display: flex;
-  margin-top: 30px;
 `;
 
 const Input = styled.input`
@@ -149,14 +148,13 @@ const CheckWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 17px;
-`;
-
-const CheckText = styled.div`
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  div {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 const SignupText = styled.div`
