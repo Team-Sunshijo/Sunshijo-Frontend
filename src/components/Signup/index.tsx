@@ -15,18 +15,18 @@ const Signup = () => {
             <TitleLine />
           </TitleWrapper>
           <InputWarpper>
-            <ContentText>아이디</ContentText>
+            <p>아이디</p>
             <Input placeholder="아이디를 입력해주세요." />
-            <ContentText>비밀번호</ContentText>
+            <p>비밀번호</p>
             <Input placeholder="비밀번호를 입력해주세요." />
-            <ContentText>이름</ContentText>
+            <p>이름</p>
             <Input placeholder="이름을 입력해주세요." />
-            <ContentText>인증코드</ContentText>
+            <p>인증코드</p>
             <Input placeholder="인증코드를 입력해주세요." />
           </InputWarpper>
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
-            <CheckText>이미 계정이 있으신가요? </CheckText>
+            <div>이미 계정이 있으신가요? </div>
             <LoginText>로그인 하러가기</LoginText>
           </CheckWrapper>
         </Content>
@@ -68,7 +68,18 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 20px 0;
+  p {
+    width: 288px;
+    height: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: pretendard;
+    display: flex;
+    margin: 18px 0;
+  }
 `;
 
 const TitleWrapper = styled.div`
@@ -93,16 +104,6 @@ const TitleLine = styled.div`
 
 const InputWarpper = styled.div`
   width: 288px;
-`;
-
-const ContentText = styled.div`
-  width: 288px;
-  height: 30px;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: pretendard;
-  display: flex;
-  margin-top: 20px;
 `;
 
 export const Input = styled.input`
@@ -153,14 +154,13 @@ const CheckWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 15px;
-`;
-
-const CheckText = styled.div`
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  div {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 const LoginText = styled.div`

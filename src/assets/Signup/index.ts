@@ -1,1 +1,1 @@
-export { default as SignImage } from "./SignImage.svg";
+export { default as SignImage } from "./signImage.svg";
