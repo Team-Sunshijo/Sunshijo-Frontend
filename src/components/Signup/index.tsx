@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../style/globalStyle";
 import { SignImage } from "../../assets/Signup/index";
 
-const Login = () => {
+const Signup = () => {
   return (
     <Container>
       <Wrapper>
@@ -11,19 +11,23 @@ const Login = () => {
         </IconWrapper>
         <Content>
           <TitleWrapper>
-            <TitleText>로그인</TitleText>
+            <TitleText>회원가입</TitleText>
             <TitleLine />
           </TitleWrapper>
           <InputWarpper>
-            <ContentText>아이디</ContentText>
+            <p>아이디</p>
             <Input placeholder="아이디를 입력해주세요." />
-            <ContentText>비밀번호</ContentText>
+            <p>비밀번호</p>
             <Input placeholder="비밀번호를 입력해주세요." />
+            <p>이름</p>
+            <Input placeholder="이름을 입력해주세요." />
+            <p>인증코드</p>
+            <Input placeholder="인증코드를 입력해주세요." />
           </InputWarpper>
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
-            <CheckText>계정이 없으신가요? </CheckText>
-            <SignupText>회원가입하기</SignupText>
+            <div>이미 계정이 있으신가요? </div>
+            <LoginText>로그인 하러가기</LoginText>
           </CheckWrapper>
         </Content>
       </Wrapper>
@@ -32,15 +36,16 @@ const Login = () => {
 };
 
 const Container = styled.div`
-   display: flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  height: 475px;
+  height: 600px;
   background-color: white;
   border-radius: 16px;
   border: solid 1px ${theme.Main};
@@ -49,32 +54,34 @@ const Wrapper = styled.div`
 
 const IconWrapper = styled.div`
   width: 218px;
-  height: 475px;
+  height: 600px;
   background-color: ${theme.Main};
   border-radius: 16px 0 0 16px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 `;
+
 const Content = styled.div`
   width: 509px;
-  height: 430px;
+  height: 623px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: auto;
   margin-bottom: auto;
+  padding: 20px 0;
   p {
     width: 288px;
-    height: 30px;
+    height: 15px;
     font-weight: 600;
     font-size: 16px;
     font-family: pretendard;
     display: flex;
-    margin-top: 30px;
+    margin: 18px 0;
   }
 `;
+
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -90,7 +97,7 @@ const TitleText = styled.div`
 `;
 
 const TitleLine = styled.div`
-  width: 61px;
+  width: 81px;
   height: 1px;
   background-color: ${theme.Main};
 `;
@@ -99,17 +106,7 @@ const InputWarpper = styled.div`
   width: 288px;
 `;
 
-const ContentText = styled.div`
-  width: 288px;
-  height: 30px;
-  font-weight: 600;
-  font-size: 16px;
-  font-family: pretendard;
-  display: flex;
-  margin-top: 30px;
-`;
-
-const Input = styled.input`
+export const Input = styled.input`
   font-family: Pretendard;
   font-style: normal;
   font-weight: 400;
@@ -122,7 +119,6 @@ const Input = styled.input`
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-left: 19px;
-
   :focus {
     outline: none;
   }
@@ -143,36 +139,31 @@ const LoginBtn = styled.button`
   border: none;
   border-radius: 8px;
   background-color: ${theme.Main};
-  margin-top: 47px;
+  margin-top: 30px;
   color: #ffffff;
   font-family: Pretendard;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 30px;
-
-  :hover{
-  background-color: ${theme.Main800};
-  }
 `;
 
 const CheckWrapper = styled.div`
-  width: 157px;
+  width: 195px;
   height: 14px;
   display: flex;
   justify-content: center;
-  margin-top: 17px;
+  margin-top: 15px;
+  div {
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
-const CheckText = styled.div`
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-`;
-
-const SignupText = styled.div`
+const LoginText = styled.div`
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
@@ -182,4 +173,4 @@ const SignupText = styled.div`
   margin-left: 2px;
 `;
 
-export default Login;
+export default Signup;
