@@ -59,12 +59,22 @@ const IconWrapper = styled.div`
 `;
 const Content = styled.div`
   width: 509px;
-  height: 386px;
+  height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 43px;
+  margin-top: auto;
+  margin-bottom: auto;
+  p {
+    width: 288px;
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: pretendard;
+    display: flex;
+    margin-top: 30px;
+  }
 `;
 const TitleWrapper = styled.div`
   display: flex;
