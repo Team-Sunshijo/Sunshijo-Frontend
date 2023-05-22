@@ -1,6 +1,6 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import Login from "./components/Login";
-import Signup from "./components/Signup/index";
+import Signup from "./components/signup";
 
 const queryClient = new QueryClient();
 
