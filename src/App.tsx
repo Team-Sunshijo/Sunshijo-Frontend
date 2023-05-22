@@ -1,11 +1,15 @@
-import React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import "./App.css";
+import Login from "./components/Login";
+import Signup from "./components/signup";
 
 const queryClient = new QueryClient();
 
 function App() {
-  return <QueryClientProvider client={queryClient}></QueryClientProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Signup />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
