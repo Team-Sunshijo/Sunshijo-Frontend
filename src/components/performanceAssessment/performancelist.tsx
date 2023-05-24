@@ -35,6 +35,7 @@ align-items: center;
     font-size: 24px;
     width: 125px;
     display: flex;
+    color:${theme.Gray800};
   }
   :hover{
     border-color: ${theme.Main};
