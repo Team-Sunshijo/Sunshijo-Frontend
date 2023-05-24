@@ -27,7 +27,7 @@ const Signup = () => {
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
             <div>이미 계정이 있으신가요? </div>
-            <LoginText>로그인 하러가기</LoginText>
+            <GoLogin>로그인 하러가기</GoLogin>
           </CheckWrapper>
         </Content>
       </Wrapper>
@@ -36,11 +36,10 @@ const Signup = () => {
 };
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+    display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 `;
 
 const Wrapper = styled.div`
@@ -146,6 +145,10 @@ const LoginBtn = styled.button`
   font-weight: 600;
   font-size: 16px;
   line-height: 30px;
+  
+  :hover{
+  background-color: ${theme.Main800};
+  }
 `;
 
 const CheckWrapper = styled.div`
@@ -163,7 +166,7 @@ const CheckWrapper = styled.div`
   }
 `;
 
-const LoginText = styled.div`
+const GoLogin = styled.div`
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
