@@ -32,11 +32,10 @@ const Login = () => {
 };
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
+   display: flex;
   justify-content: center;
   align-items: center;
+  height: 95vh;
 `;
 
 const Wrapper = styled.div`
@@ -151,6 +150,10 @@ const LoginBtn = styled.button`
   font-weight: 600;
   font-size: 16px;
   line-height: 30px;
+
+  :hover{
+  background-color: ${theme.Main800};
+  }
 `;
 
 const CheckWrapper = styled.div`
