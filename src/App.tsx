@@ -1,13 +1,12 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import Login from "./components/Login";
-import Signup from "./components/signup";
+import Performance from "./components/performanCreate";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Signup />
+   <Performance/>
     </QueryClientProvider>
   );
 }
