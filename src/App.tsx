@@ -1,12 +1,19 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import PerformancePage from "./pages/PerformancePage";
+import Login from "./components/Login";
+import { ThemeProvider } from "styled-components";
+import theme from "./utils/theme/theme";
+import GlobalStyle from "./style/globalStyle";
+
 const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-    <PerformancePage/>
-    </QueryClientProvider>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
+        <Login />
+        <GlobalStyle />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 
