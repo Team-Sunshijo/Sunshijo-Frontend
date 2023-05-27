@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../style/globalStyle";
 import { SignImage } from "../../assets/Signup";
 
 const Signup = () => {
@@ -36,7 +35,7 @@ const Signup = () => {
 };
 
 const Container = styled.div`
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -45,16 +44,16 @@ const Container = styled.div`
 const Wrapper = styled.div`
   display: flex;
   height: 600px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.White};
   border-radius: 16px;
-  border: solid 1px ${theme.Main};
+  border: solid 1px ${({ theme }) => theme.colors.Main};
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
 `;
 
 const IconWrapper = styled.div`
   width: 218px;
   height: 600px;
-  background-color: ${theme.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
   border-radius: 16px 0 0 16px;
   display: flex;
   justify-content: flex-end;
@@ -73,9 +72,7 @@ const Content = styled.div`
   p {
     width: 288px;
     height: 15px;
-    font-weight: 600;
-    font-size: 16px;
-    font-family: pretendard;
+    font: ${({ theme }) => theme.font.SemiBold16};
     display: flex;
     margin: 18px 0;
   }
@@ -89,16 +86,14 @@ const TitleWrapper = styled.div`
 const TitleText = styled.div`
   width: 288px;
   height: 30px;
-  font-weight: 600;
-  font-size: 24px;
-  font-family: Pretendard;
+  font: ${({ theme }) => theme.font.SemiBold24};
   display: flex;
 `;
 
 const TitleLine = styled.div`
   width: 81px;
   height: 1px;
-  background-color: ${theme.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
 `;
 
 const InputWarpper = styled.div`
@@ -106,15 +101,12 @@ const InputWarpper = styled.div`
 `;
 
 export const Input = styled.input`
-  font-family: Pretendard;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  font: ${({ theme }) => theme.font.Regular14};
   width: 266px;
   height: 53px;
   border: none;
   border-radius: 6px;
-  background: #ffffff;
+  background: ${({ theme }) => theme.colors.White};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-left: 19px;
@@ -122,10 +114,7 @@ export const Input = styled.input`
     outline: none;
   }
   &::placeholder {
-    font-family: Pretendard;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+    font: ${({ theme }) => theme.font.Regular14};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,17 +126,13 @@ const LoginBtn = styled.button`
   height: 41px;
   border: none;
   border-radius: 8px;
-  background-color: ${theme.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
   margin-top: 30px;
-  color: #ffffff;
-  font-family: Pretendard;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 30px;
-  
-  :hover{
-  background-color: ${theme.Main800};
+  color: ${({ theme }) => theme.colors.White};
+  font: ${({ theme }) => theme.font.SemiBold16};
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main};
   }
 `;
 
@@ -158,21 +143,13 @@ const CheckWrapper = styled.div`
   justify-content: center;
   margin-top: 15px;
   div {
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
+    font: ${({ theme }) => theme.font.Regular12};
   }
 `;
 
 const GoLogin = styled.div`
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  color: ${theme.Main};
+  font: ${({ theme }) => theme.font.Medium12};
+  color: ${({ theme }) => theme.colors.Main};
   margin-left: 2px;
 `;
 
