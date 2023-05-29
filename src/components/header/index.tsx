@@ -18,7 +18,9 @@ const Header = () => {
 
 const HeaderArea = styled.div`
   font: ${({ theme }) => theme.font.Regular16};
+  width: 100vw;
   height: 30px;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
