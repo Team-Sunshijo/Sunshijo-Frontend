@@ -29,9 +29,6 @@ const ListBox = styled.div`
   justify-content: space-between;
   padding: 0 47px;
   p {
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 400;
     font: ${({ theme }) => theme.font.Regular24};
     width: 125px;
     display: flex;
