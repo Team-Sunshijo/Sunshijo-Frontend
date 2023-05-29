@@ -20,7 +20,7 @@ const PerformanceList = ({
 };
 
 const ListBox = styled.div`
-align-items: center;
+  align-items: center;
   height: 92px;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
@@ -37,9 +37,8 @@ align-items: center;
     display: flex;
     color: ${({ theme }) => theme.colors.Gray800};
   }
-  :hover{
+  :hover {
     border-color: ${({ theme }) => theme.colors.Main};
   }
-  `
+`;
 export default PerformanceList;
-
