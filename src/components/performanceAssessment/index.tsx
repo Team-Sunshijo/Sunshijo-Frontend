@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "../../style/globalStyle";
+import theme from "../../utils/theme/theme";
 import { List } from "../contance";
 import PerformanceList from "./performancelist";
 
@@ -34,7 +34,7 @@ const Header = styled.div`
     font-size: 32px;
     width: 174px;
     height: 30px;
-    color: ${theme.Gray900};
+    color: ${theme.colors.Gray900};
     margin-top: 151px;
   }
   justify-content: space-between;
@@ -46,21 +46,21 @@ const Button = styled.button`
   left: 1619px;
   padding: 11px 24px;
   border: none;
-  background-color: ${theme.Main};
+  background-color: ${theme.colors.Main};
   border-radius: 8px;
   font-family: "Pretendard";
   font-weight: 700;
   font-size: 16px;
-  color: ${theme.White};
+  color: ${theme.colors.White};
   margin-top: 143px;
   :hover {
-    background-color: ${theme.Main800};
+    background-color: ${theme.colors.Main800};
   }
 `;
 const TitleRow = styled.div`
   display: flex;
   height: 70px;
-  background-color: ${theme.Gray100};
+  background-color: ${theme.colors.Gray100};
   border-radius: 8px;
   justify-content: space-between;
   padding: 0 47px;

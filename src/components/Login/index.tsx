@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SignImage } from "../../assets/Signup/index";
+import theme from "../../utils/theme/theme";
 
 const Login = () => {
   return (
