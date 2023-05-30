@@ -7,14 +7,16 @@ const PlanWriting = () => {
     <Container>
       <Header>
         <p>계획서 작성</p>
+        <div>
           <ModifyButton>계획서 수정</ModifyButton>
           <AddButton>계획서 추가</AddButton>
+        </div>
       </Header>
       <TitleList>
         <p>날짜(요일)</p>
         <p>사유</p>
-        <p>요청교사(서명)</p>
-        <p>부담임(서명)</p>
+        <p>요청교사</p>
+        <p>부담임</p>
       </TitleList>
       {PlanList.map((item) => (
         <PlanWritingList
@@ -36,91 +38,57 @@ const Header = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  min-width: 500px;
   p {
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 32px;
+    font: ${({ theme }) => theme.font.SemiBold32};
     line-height: 30px;
-    width: 146px;
-    left: 165px;
-    top: 151px;
   }
 `;
 
-
-
 const ModifyButton = styled.button`
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 11px 24px;
-  gap: 20px;
-
   width: 122px;
   height: 48px;
-  background-color: ${theme.colors.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
-
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
+  font: ${({ theme }) => theme.font.SemiBold16};
   line-height: 160%;
-  color: ${theme.colors.White};
+  color: ${({ theme }) => theme.colors.White};
   :hover {
-    background-color: ${theme.colors.Main800};
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
 const AddButton = styled.button`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-
+  margin-left:45px;
   width: 122px;
   height: 48px;
   top: 143px;
-  background-color: ${theme.colors.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
 
-  font-family: "Pretendard";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
+  font: ${({ theme }) => theme.font.SemiBold16};
   line-height: 160%;
-  color: ${theme.colors.White};
+  color: ${({ theme }) => theme.colors.White};
   :hover {
-    background-color: ${theme.colors.Main800};
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
 const TitleList = styled.div`
   display: flex;
-  justify-content: space-between;
   height: 70px;
-  margin-top:15px;
-  background-color: ${theme.colors.Gray100};
+  background-color: ${({ theme }) => theme.colors.Gray100};
   border-radius: 8px;
-  margin-bottom: 25px;
+  justify-content: space-between;
   padding: 20px 47px;
-  margin-left:4 0px
+  margin-top: 15px;
   p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    width: 145px;
-  }
+    font: ${({ theme }) => theme.font.SemiBold24};
+    width: 125px;
+  };
 `;
 
 export default PlanWriting;

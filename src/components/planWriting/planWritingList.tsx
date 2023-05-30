@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import theme from "../../utils/theme/theme";
 import { PlanListProps } from "../models/planListProps";
 
 const PlanWritingList = ({
@@ -21,31 +20,22 @@ const PlanWritingList = ({
 };
 
 const PlanListBox = styled.div`
+  align-items: center;
+  height: 92px;
+  border-radius: 8px;
+  border: 1px solid ${({ theme }) => theme.colors.Gray300};
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
   padding: 0 47px;
-  height: 84px;
-  border: 1px solid ${theme.colors.Gray300};
-  border-radius: 8px;
-  min-width: 500px;
   p {
+    font: ${({ theme }) => theme.font.Regular24};
+    width: 125px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-
-    width: 141px;
-    height: 30px;
-    left: 916px;
-    top: 27px;
+    color: ${({ theme }) => theme.colors.Gray800};
   }
   :hover {
-    border-color: ${theme.colors.Main};
+    border-color: ${({ theme }) => theme.colors.Main};
   }
 `;
 
