@@ -10,16 +10,11 @@ const Login = () => {
           <img src={SignImage} alt="" />
         </IconWrapper>
         <Content>
-          <TitleWrapper>
-            <TitleText>로그인</TitleText>
-            <TitleLine />
-          </TitleWrapper>
-          <InputWarpper>
-            <ContentText>아이디</ContentText>
-            <Input placeholder="아이디를 입력해주세요." />
-            <ContentText>비밀번호</ContentText>
-            <Input placeholder="비밀번호를 입력해주세요." />
-          </InputWarpper>
+          <TitleText>로그인</TitleText>
+          <p>아이디</p>
+          <Input placeholder="아이디를 입력해주세요." />
+          <p>비밀번호</p>
+          <Input placeholder="비밀번호를 입력해주세요." />
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
             <CheckText>계정이 없으신가요? </CheckText>
@@ -35,13 +30,13 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 100vh;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   height: 475px;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.White};
   border-radius: 16px;
   border: solid 1px ${({ theme }) => theme.colors.Main};
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
@@ -49,7 +44,6 @@ const Wrapper = styled.div`
 
 const IconWrapper = styled.div`
   width: 218px;
-  height: 475px;
   background-color: ${({ theme }) => theme.colors.Main};
   border-radius: 16px 0 0 16px;
   display: flex;
@@ -59,53 +53,28 @@ const IconWrapper = styled.div`
 const Content = styled.div`
   width: 509px;
   height: 430px;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  padding: 44px 100px;
   p {
-    width: 288px;
     height: 30px;
     font: ${({ theme }) => theme.font.SemiBold16};
-    display: flex;
     margin-top: 30px;
   }
 `;
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
 const TitleText = styled.div`
-  width: 288px;
+  width: 63px;
   height: 30px;
   font: ${({ theme }) => theme.font.SemiBold24};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.Main};
   display: flex;
-`;
-
-const TitleLine = styled.div`
-  width: 61px;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.Main};
-`;
-
-const InputWarpper = styled.div`
-  width: 288px;
-`;
-
-const ContentText = styled.div`
-  width: 288px;
-  height: 30px;
-  font: ${({ theme }) => theme.font.SemiBold16};
-  display: flex;
-  margin-top: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 const Input = styled.input`
   font: ${({ theme }) => theme.font.Regular14};
-  width: 266px;
+  width: 288px;
   height: 53px;
   border: none;
   border-radius: 6px;
@@ -113,16 +82,7 @@ const Input = styled.input`
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
   border-radius: 6px;
   padding-left: 19px;
-
-  :focus {
-    outline: none;
-  }
-  &::placeholder {
-    font: ${({ theme }) => theme.font.Regular14};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  outline: none;
 `;
 
 const LoginBtn = styled.button`
@@ -131,31 +91,29 @@ const LoginBtn = styled.button`
   border: none;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.Main};
-  margin-top: 47px;
+  margin: 47px 0 17px 0;
   color: ${({ theme }) => theme.colors.White};
   font: ${({ theme }) => theme.font.SemiBold16};
-
+  cursor: pointer;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
 const CheckWrapper = styled.div`
-  width: 157px;
-  height: 14px;
-  display: flex;
-  justify-content: center;
-  margin-top: 17px;
+  width: 160px;
+  margin: 0 auto;
 `;
 
-const CheckText = styled.div`
+const CheckText = styled.span`
   font: ${({ theme }) => theme.font.Regular12};
 `;
 
-const SignupText = styled.div`
+const SignupText = styled.span`
   font: ${({ theme }) => theme.font.Medium12};
   color: ${({ theme }) => theme.colors.Main};
   margin-left: 2px;
+  cursor: pointer;
 `;
 
 export default Login;
