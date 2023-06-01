@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { SignImage } from "../../assets/Signup/index";
-import theme from "../../utils/theme/theme";
 
 const Login = () => {
   return (
@@ -11,9 +10,9 @@ const Login = () => {
         </IconWrapper>
         <Content>
           <TitleText>로그인</TitleText>
-          <p>아이디</p>
+          <ContentText>아이디</ContentText>
           <Input placeholder="아이디를 입력해주세요." />
-          <p>비밀번호</p>
+          <ContentText>비밀번호</ContentText>
           <Input placeholder="비밀번호를 입력해주세요." />
           <LoginBtn>로그인</LoginBtn>
           <CheckWrapper>
@@ -50,16 +49,17 @@ const IconWrapper = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
 `;
+
 const Content = styled.div`
   width: 509px;
   height: 430px;
-  flex-direction: column;
   padding: 44px 100px;
-  p {
-    height: 30px;
-    font: ${({ theme }) => theme.font.SemiBold16};
-    margin-top: 30px;
-  }
+`;
+
+const ContentText = styled.div`
+  height: 30px;
+  font: ${({ theme }) => theme.font.SemiBold16};
+  margin-top: 30px;
 `;
 
 const TitleText = styled.div`
@@ -67,9 +67,6 @@ const TitleText = styled.div`
   height: 30px;
   font: ${({ theme }) => theme.font.SemiBold24};
   border-bottom: 1px solid ${({ theme }) => theme.colors.Main};
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
 `;
 
 const Input = styled.input`
