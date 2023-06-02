@@ -61,7 +61,7 @@ const Content = styled.div`
 `;
 
 const TitleText = styled.div`
-  width: 83px;
+  width: 85px;
   height: 30px;
   font: ${({ theme }) => theme.font.SemiBold24};
   border-bottom: 1px solid ${({ theme }) => theme.colors.Main};
