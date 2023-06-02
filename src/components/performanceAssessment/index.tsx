@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { List } from "../contance";
 import PerformanceList from "./performancelist";
+
 const Performance = () => {
+  
+  
   return (
     <Container>
       <Header>
@@ -15,7 +18,12 @@ const Performance = () => {
         <p>담당교사</p>
       </TitleRow>
       {List.map((item) => (
-        <PerformanceList date={item.date}grade_class={item.grade_class}teacher={item.teacher}subject={item.subject}/>
+        <PerformanceList
+          date={item.date}
+          grade_class={item.grade_class}
+          teacher={item.teacher}
+          subject={item.subject}
+        />
       ))}
     </Container>
   );
@@ -44,7 +52,7 @@ const Button = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.colors.Main};
   border-radius: 8px;
-  font: ${({theme})=>theme.font.SemiBold16};
+  font: ${({ theme }) => theme.font.SemiBold16};
   color: ${({ theme }) => theme.colors.White};
   margin-top: 143px;
   :hover {
