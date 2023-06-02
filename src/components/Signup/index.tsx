@@ -56,7 +56,6 @@ const IconWrapper = styled.div`
 
 const Content = styled.div`
   width: 509px;
-  height: 623px;
   padding: 35px 100px;
 `;
 
