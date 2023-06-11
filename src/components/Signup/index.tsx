@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { SignImage } from "../../assets/Signup";
+import { SignPerson } from "../../assets/icons";
 
 const Signup = () => {
   return (
     <Container>
       <Wrapper>
         <IconWrapper>
-          <img src={SignImage} alt="" />
+          <img src={SignPerson} alt="" />
         </IconWrapper>
         <Content>
           <TitleText>회원가입</TitleText>
@@ -80,7 +80,6 @@ export const Input = styled.input`
   border-radius: 6px;
   background: ${({ theme }) => theme.colors.White};
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
-  border-radius: 6px;
   padding-left: 19px;
   outline: none;
 `;
