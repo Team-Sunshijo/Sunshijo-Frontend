@@ -57,6 +57,9 @@ const IconWrapper = styled.div`
 const Content = styled.div`
   width: 509px;
   padding: 35px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px 0;
 `;
 
 const TitleText = styled.div`
@@ -69,7 +72,6 @@ const TitleText = styled.div`
 const ContentText = styled.div`
   height: 15px;
   font: ${({ theme }) => theme.font.SemiBold16};
-  margin: 18px 0;
 `;
 
 export const Input = styled.input`
