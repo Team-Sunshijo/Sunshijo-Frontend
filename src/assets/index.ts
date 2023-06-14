@@ -1,2 +1,2 @@
 export { default as AlramIcon } from "./AlramIcon.svg";
-export { default as DropIcon} from "./dropImg.svg"
+export { default as DropImg} from "./dropImg.svg"

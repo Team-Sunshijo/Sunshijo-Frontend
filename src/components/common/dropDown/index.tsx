@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DropIcon } from "../../../assets";
+import { DropImg } from "../../../assets";
 
 interface DropdownProps {
   options: { initialState: string; option: string[] };
@@ -50,7 +50,7 @@ const DropContainer = styled.div<{ width: number }>`
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.White};
     border: 1px solid ${({ theme }) => theme.colors.Gray300};
-    background: no-repeat calc(100% - 9px) center url(${DropIcon});
+    background: no-repeat calc(100% - 9px) center url(${DropImg});
   }
 `;
 
