@@ -34,7 +34,7 @@ const DropContainer = styled.div`
   display: flex;
   gap: 30px;
   width: 473px;
- margin-top: 90px;
+  margin-top: 90px;
 `;
 const ModalContainer = styled.div`
   width: 100%;

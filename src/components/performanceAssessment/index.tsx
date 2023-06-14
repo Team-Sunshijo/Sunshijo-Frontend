@@ -1,15 +1,26 @@
 import styled from "styled-components";
 import { List } from "../contance";
 import PerformanceList from "./performancelist";
+import {useState } from "react";
+import PerformanceModal from "./performanceModal";
 
 const Performance = () => {
-  
-  
+  const [isModal, setIsModal] = useState<boolean>(false);
+
+  function openModal() {
+    setIsModal(true);
+  }
+
+  function closeModal() {
+    setIsModal(false);
+  }
+
   return (
     <Container>
       <Header>
         <p>수행평가 등록</p>
-        <Button>수행평가 등록</Button>
+        <Button onClick={openModal}>수행평가 등록</Button>
+        {isModal && <PerformanceModal open={isModal} close={closeModal}  /> }
       </Header>
       <TitleRow>
         <p>날짜(요일)</p>
@@ -34,7 +45,6 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   p {
-    line-height: 30px;
     font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
     height: 30px;
@@ -50,7 +60,7 @@ const Button = styled.button`
   left: 1619px;
   padding: 11px 24px;
   border: none;
-  background-color: ${({ theme }) => theme.colors.Main};
+  background-color:${({ theme }) => theme.colors.Main};
   border-radius: 8px;
   font: ${({ theme }) => theme.font.SemiBold16};
   color: ${({ theme }) => theme.colors.White};
