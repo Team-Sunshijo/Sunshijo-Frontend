@@ -14,6 +14,7 @@ const Performance = () => {
   function closeModal() {
     setIsModal(false);
   }
+
   return (
     <Container>
       <Header>
@@ -28,7 +29,12 @@ const Performance = () => {
         <p>담당교사</p>
       </TitleRow>
       {List.map((item) => (
-        <PerformanceList date={item.date}grade_class={item.grade_class}teacher={item.teacher}subject={item.subject}/>
+        <PerformanceList
+          date={item.date}
+          grade_class={item.grade_class}
+          teacher={item.teacher}
+          subject={item.subject}
+        />
       ))}
     </Container>
   );
@@ -59,10 +65,8 @@ const Button = styled.button`
   border: none;
   background-color:${({ theme }) => theme.colors.Main};
   border-radius: 8px;
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-size: 16px;
-  color:${({ theme }) => theme.colors.White};
+  font: ${({ theme }) => theme.font.SemiBold16};
+  color: ${({ theme }) => theme.colors.White};
   margin-top: 143px;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
