@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AlramIcon } from "../../assets";
+import { Alram } from "../../assets/icons";
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
         <p>시간표 변경</p>
         <p>시간표 관리</p>
         <p>수행평가 등록</p>
-        <Alarm src={AlramIcon} />
+        <img src={Alram} />
         <AcountButton>로그아웃</AcountButton>
       </Pages>
     </HeaderArea>
@@ -21,11 +21,18 @@ const HeaderArea = styled.div`
   width: 100vw;
   height: 30px;
   position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px 165px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  p,
+  img,
+  button {
+    cursor: pointer;
+  }
 `;
 
 const Logo = styled.div`
@@ -38,13 +45,6 @@ const Pages = styled.div`
   justify-content: space-between;
   width: 500px;
   align-items: center;
-  p {
-    cursor: pointer;
-  }
-`;
-
-const Alarm = styled.img`
-  cursor: pointer;
 `;
 
 const AcountButton = styled.button`
@@ -54,7 +54,6 @@ const AcountButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.Main};
   border-radius: 8px;
   padding: 6px 12px;
-  cursor: pointer;
 `;
 
 export default Header;
