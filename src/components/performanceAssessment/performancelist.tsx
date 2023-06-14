@@ -18,8 +18,9 @@ const PerformanceList = ({
     </>
   );
 };
+
 const ListBox = styled.div`
-align-items: center;
+  align-items: center;
   height: 92px;
   border-radius: 8px;
   border: 1px solid${({ theme }) => theme.colors.Gray300};
@@ -28,10 +29,7 @@ align-items: center;
   justify-content: space-between;
   padding: 0 47px;
   p {
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
+    font: ${({ theme }) => theme.font.Regular24};
     width: 125px;
     display: flex;
     color:${({ theme }) => theme.colors.Gray900};
