@@ -10,7 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-<Performance/>
+        <Performance />
         <GlobalStyle />
       </QueryClientProvider>
     </ThemeProvider>
