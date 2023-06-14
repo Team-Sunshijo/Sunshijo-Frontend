@@ -1,5 +1,5 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import Login from "./components/Login";
+import Performance from "./components/performanceAssessment";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/theme/theme";
 import GlobalStyle from "./style/globalStyle";
@@ -10,7 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
-        <Login />
+     <Performance/>
         <GlobalStyle />
       </QueryClientProvider>
     </ThemeProvider>

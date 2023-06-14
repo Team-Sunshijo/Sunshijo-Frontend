@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../style/globalStyle";
 import { ListProps } from "../models/List";
 
 const PerformanceList = ({
@@ -23,7 +22,7 @@ const ListBox = styled.div`
 align-items: center;
   height: 92px;
   border-radius: 8px;
-  border: 1px solid ${theme.Gray300};
+  border: 1px solid${({ theme }) => theme.colors.Gray300};
   margin-top: 25px;
   display: flex;
   justify-content: space-between;
@@ -35,10 +34,10 @@ align-items: center;
     font-size: 24px;
     width: 125px;
     display: flex;
-    color:${theme.Gray800};
+    color:${({ theme }) => theme.colors.Gray900};
   }
   :hover{
-    border-color: ${theme.Main};
+    border-color: ${({ theme }) => theme.colors.Main};
   }
 `;
 export default PerformanceList;
