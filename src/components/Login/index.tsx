@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { SignImage } from "../../assets/Signup/index";
+import { SignPerson } from "../../assets/icons";
 
 const Login = () => {
   return (
     <Container>
       <Wrapper>
         <IconWrapper>
-          <img src={SignImage} alt="" />
+          <img src={SignPerson} alt="" />
         </IconWrapper>
         <Content>
           <TitleText>로그인</TitleText>
