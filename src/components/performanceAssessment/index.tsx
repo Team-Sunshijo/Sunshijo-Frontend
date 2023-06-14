@@ -1,14 +1,25 @@
 import styled from "styled-components";
-import { theme } from "../../style/globalStyle";
 import { List } from "../contance";
 import PerformanceList from "./performancelist";
+import {useState } from "react";
+import PerformanceModal from "./performanceModal";
 
 const Performance = () => {
+  const [isModal, setIsModal] = useState<boolean>(false);
+
+  function openModal() {
+    setIsModal(true);
+  }
+
+  function closeModal() {
+    setIsModal(false);
+  }
   return (
     <Container>
       <Header>
         <p>수행평가 등록</p>
-        <Button>수행평가 등록</Button>
+        <Button onClick={openModal}>수행평가 등록</Button>
+        {isModal && <PerformanceModal open={isModal} close={closeModal}  /> }
       </Header>
       <TitleRow>
         <p>날짜(요일)</p>
@@ -34,7 +45,7 @@ const Header = styled.div`
     font-size: 32px;
     width: 174px;
     height: 30px;
-    color: ${theme.Gray900};
+    color: ${({ theme }) => theme.colors.Gray900};
     margin-top: 151px;
   }
   justify-content: space-between;
@@ -46,24 +57,25 @@ const Button = styled.button`
   left: 1619px;
   padding: 11px 24px;
   border: none;
-  background-color: ${theme.Main};
+  background-color:${({ theme }) => theme.colors.Main};
   border-radius: 8px;
   font-family: "Pretendard";
   font-weight: 700;
   font-size: 16px;
-  color: ${theme.White};
+  color:${({ theme }) => theme.colors.White};
   margin-top: 143px;
   :hover {
-    background-color: ${theme.Main800};
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 const TitleRow = styled.div`
   display: flex;
   height: 70px;
-  background-color: ${theme.Gray100};
+  background-color: ${({ theme }) => theme.colors.Gray100};
   border-radius: 8px;
   justify-content: space-between;
-  padding: 0 47px;
+  padding: 20px 47px;
+  margin-top: 15px;
   p {
     font-family: "Pretendard";
     font-style: normal;
