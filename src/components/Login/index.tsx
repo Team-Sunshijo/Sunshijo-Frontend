@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { SignPerson } from "../../assets/icons";
-import { SignImage } from "../../assets/Signup/index";
 
 const Login = () => {
   return (
