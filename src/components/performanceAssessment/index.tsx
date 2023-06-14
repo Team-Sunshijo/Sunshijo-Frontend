@@ -45,10 +45,7 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   p {
-    font-family: "Pretendard";
-    line-height: 30px;
-    font-weight: 700;
-    font-size: 32px;
+    font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
     height: 30px;
     color: ${({ theme }) => theme.colors.Gray900};
@@ -81,10 +78,7 @@ const TitleRow = styled.div`
   padding: 20px 47px;
   margin-top: 15px;
   p {
-    font-family: "Pretendard";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
+    font: ${({ theme }) => theme.font.SemiBold24};
     width: 125px;
   }
 `;
