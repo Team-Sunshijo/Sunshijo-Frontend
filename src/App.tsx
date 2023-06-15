@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "./utils/theme/theme";
 import Router from "./Router";
 
+
 const queryClient = new QueryClient();
 
 function App() {
