@@ -1,7 +1,12 @@
+import SignFrame from "../components/common/SignFrame";
 import Signup from "../components/Signup";
 
 const SignupPage = () => {
-  return <Signup />;
+  return (
+    <SignFrame>
+      <Signup />
+    </SignFrame>
+  );
 };
 
 export default SignupPage;
