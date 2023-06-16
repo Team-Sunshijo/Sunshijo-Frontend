@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import DetailClassChangeList from "./detailClassChangeList";
-import DetailReinforcementList from "./detailReinforcementList";
+import PlanDetailClassChange from "./planDetailClassChange";
+import PlanDetailReinforcement from "./planDetailReinforcement";
 
-const PlanWritingDetail = () => {
-  return (
+const PlanWritingDetailList = () => {
+  return(
     <Container>
       <MainListHeader>
         <p>날짜</p>
@@ -15,8 +15,8 @@ const PlanWritingDetail = () => {
         <input type="text" placeholder="사유 입력" />
         <input type="text" placeholder="요청교사 입력" />
       </MainList>
-      <DetailReinforcementList />
-      <DetailClassChangeList />
+      <PlanDetailReinforcement />
+      <PlanDetailClassChange />
     </Container>
   );
 };
@@ -60,4 +60,4 @@ const MainList = styled.div`
   }
 `;
 
-export default PlanWritingDetail;
+export default PlanWritingDetailList;

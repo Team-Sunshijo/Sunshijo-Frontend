@@ -32,7 +32,3 @@ export interface ClassChangeListProps {
       replace_subject: string;
       charge_teacher: string;
 }
-
-
-
-

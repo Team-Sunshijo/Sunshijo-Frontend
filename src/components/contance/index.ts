@@ -68,7 +68,7 @@ export const PlanWList = [
     request_teacher: "김광석",
     middle_teacher: "김한비",
   },
-]
+];
 
 export const ReinforcementList = [
   {
@@ -103,7 +103,7 @@ export const ReinforcementList = [
     reinforcement_plan: "보충수업",
     reinforcement_teacher: "김한비",
   },
-]
+];
 
 export const ClassChangeList = [
   {
@@ -150,4 +150,5 @@ export const ClassChangeList = [
     replace_subject: "한국사",
     charge_teacher: "김한비",
   },
-]
+];
+
