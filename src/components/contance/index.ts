@@ -70,7 +70,7 @@ export const PlanWList = [
     request_teacher: "김광석",
     middle_teacher: "김한비",
   },
-]
+];
 
 export const ReinforcementList = [
   {
@@ -105,7 +105,7 @@ export const ReinforcementList = [
     reinforcement_plan: "보충수업",
     reinforcement_teacher: "김한비",
   },
-]
+];
 
 export const ClassChangeList = [
   {
@@ -152,5 +152,10 @@ export const ClassChangeList = [
     replace_subject: "한국사",
     charge_teacher: "김한비",
   },
+<<<<<<< refs/remotes/origin/main
 ]
 >>>>>>> 📝 :: 계획서 작성 디테일 페이지 퍼블리싱
+=======
+];
+
+>>>>>>> 📝 :: 컴플릭트 해결
