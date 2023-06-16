@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import styled from "styled-components";
-import { DropIcon } from "../../../assets";
+import { DropIcon } from "../../../assets/icons";
 
 interface DropdownProps {
   options: { initialState: string; option: string[] };

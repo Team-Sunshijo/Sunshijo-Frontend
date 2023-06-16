@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Dropdown from "../common/dropDown";
-import { classDropDownItem, gradeDropDownItem } from "../constant/performance";
 import { ReactElement } from "react";
+import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
 
 interface props {
   open: boolean;
