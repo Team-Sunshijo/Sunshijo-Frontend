@@ -37,8 +37,6 @@ export const List=[
   },
 ];
 
-<<<<<<< refs/remotes/origin/main
-=======
 export const PlanWList = [
   {
     date: "2023-5-2",
@@ -152,10 +150,4 @@ export const ClassChangeList = [
     replace_subject: "한국사",
     charge_teacher: "김한비",
   },
-<<<<<<< refs/remotes/origin/main
 ]
->>>>>>> 📝 :: 계획서 작성 디테일 페이지 퍼블리싱
-=======
-];
-
->>>>>>> 📝 :: 컴플릭트 해결
