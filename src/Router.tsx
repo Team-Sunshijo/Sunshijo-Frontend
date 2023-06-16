@@ -17,8 +17,4 @@ function Router() {
   );
 }
 
-<<<<<<< HEAD
 export default Router;
-=======
-export default Router;
->>>>>>> 37-plan-writing-detail-page
