@@ -19,4 +19,8 @@ function MainRouter() {
   );
 }
 
+<<<<<<< Updated upstream
 export default MainRouter;
+=======
+export default MainRouter;
+>>>>>>> Stashed changes

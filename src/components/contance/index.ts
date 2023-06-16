@@ -150,4 +150,9 @@ export const ClassChangeList = [
     replace_subject: "한국사",
     charge_teacher: "김한비",
   },
+<<<<<<< HEAD
 ]
+=======
+];
+
+>>>>>>> 37-plan-writing-detail-page
