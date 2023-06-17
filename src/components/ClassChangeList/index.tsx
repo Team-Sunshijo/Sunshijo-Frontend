@@ -1,5 +1,6 @@
 import * as _ from "./style";
-import { ChangeIcon } from "../../assets";
+import { ChangeIcon } from "../../assets/icons";
+
 const ClassChangeList = () => {
   return (
     <>

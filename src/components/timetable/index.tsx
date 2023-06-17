@@ -1,10 +1,11 @@
 import * as _ from "./style";
+import { ExplainIcon } from "../../assets/icons";
 
 const TimeTable = () => {
   return (
     <div>
       <_.ExplainText>
-        {/* <img src={ExplainIcon} /> */}
+        <img src={ExplainIcon} alt="" />
         노란색 표시는 바뀐 시간표입니다.
       </_.ExplainText>
       <_.Table>
