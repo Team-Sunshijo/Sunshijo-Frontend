@@ -1,6 +1,6 @@
 import * as _ from "./style";
-import { PreviousIcon } from "../../assets/icons";
-import { NextIcon } from "../../assets/icons";
+import { PreviousIcon } from "../../../assets/icons";
+import { NextIcon } from "../../../assets/icons";
 
 const SchoolScheduleList = () => {
   return (

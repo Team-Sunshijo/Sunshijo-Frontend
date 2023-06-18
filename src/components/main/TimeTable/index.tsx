@@ -1,5 +1,5 @@
 import * as _ from "./style";
-import { ExplainIcon } from "../../assets/icons";
+import { ExplainIcon } from "../../../assets/icons";
 
 const TimeTable = () => {
   return (
