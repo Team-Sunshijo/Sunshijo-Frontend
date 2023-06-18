@@ -1,8 +1,7 @@
 import * as _ from "./style";
-import Header from "../header";
-import TimeTable from "../timetable";
-import ClassChangeList from "../ClassChangeList";
-import SchoolScheduleList from "../SchoolScheduleList";
+import TimeTable from "./TimeTable";
+import ClassChangeList from "./ClassChangeList";
+import SchoolScheduleList from "./SchoolScheduleList";
 
 const Main = () => {
   return (
