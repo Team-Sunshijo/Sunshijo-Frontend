@@ -12,12 +12,12 @@ const DetailReinforcementList = ({
   return (
     <>
       <PlanReinforcementListBox>
-        <p>{date}</p>
-        <p>{lesson}</p>
-        <p>{grade_class}</p>
-        <p>{missing_subjects}</p>
-        <p>{reinforcement_plan}</p>
-        <p>{reinforcement_teacher}</p>
+        <MainText>{date}</MainText>
+        <MainText>{lesson}</MainText>
+        <MainText>{grade_class}</MainText>
+        <MainText>{missing_subjects}</MainText>
+        <MainText>{reinforcement_plan}</MainText>
+        <MainText>{reinforcement_teacher}</MainText>
       </PlanReinforcementListBox>
     </>
   );
@@ -32,15 +32,16 @@ const PlanReinforcementListBox = styled.div`
   border: 1px solid${({ theme }) => theme.colors.Gray300};
   margin-top: 25px;
   padding: 0 47px;
-  p {
-    font: ${({ theme }) => theme.font.Regular24};
-    width: 125px;
-    display: flex;
-    color:${({ theme }) => theme.colors.Gray900};
-  }
   :hover{
     border-color: ${({ theme }) => theme.colors.Main};
   }
+`;
+
+const MainText = styled.div`
+  font: ${({ theme }) => theme.font.Regular24};
+  color:${({ theme }) => theme.colors.Gray800};
+  width: 125px;
+  display: flex;
 `;
 
 export default DetailReinforcementList;

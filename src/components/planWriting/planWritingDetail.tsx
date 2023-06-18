@@ -6,9 +6,9 @@ const PlanWritingDetailList = () => {
   return(
     <Container>
       <MainListHeader>
-        <p>날짜</p>
-        <p>사유</p>
-        <p>요청교사</p>
+        <TitleText>날짜</TitleText>
+        <TitleText>사유</TitleText>
+        <TitleText>요청교사</TitleText>
       </MainListHeader>
       <MainList>
         <input type="text" placeholder="날짜 입력" />
@@ -26,6 +26,13 @@ const Container = styled.div`
   width: 100%;
 `;
 
+const TitleText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold24};
+  color: ${({ theme }) => theme.colors.Gray900};
+  line-height: 30px;
+  width: 130px;
+`;
+
 const MainListHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -35,11 +42,6 @@ const MainListHeader = styled.div`
   top: 116px;
   background-color: ${({ theme }) => theme.colors.Main};
   border-radius: 8px 8px 0px 0px;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold24};
-    line-height: 30px;
-    width: 130px;
-  }
 `;
 
 const MainList = styled.div`

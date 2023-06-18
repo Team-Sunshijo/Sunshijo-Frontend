@@ -6,18 +6,18 @@ const PlanDetailClassChange = () => {
   return(
     <>
       <ListHeader>
-        <p>수업교체 계획서</p>
+        <TitleText>수업교체 계획서</TitleText>
         <div>
           <ModifyButton>계획서 수정</ModifyButton>
           <AddButton>계획서 추가</AddButton>
         </div>
       </ListHeader>
       <ClassChangeTitleList>
-        <p>날짜(요일)</p>
-        <p>교시</p>
-        <p>학년-반</p>
-        <p>과목</p>
-        <p>담당교사</p>
+        <MainText>날짜(요일)</MainText>
+        <MainText>교시</MainText>
+        <MainText>학년-반</MainText>
+        <MainText>과목</MainText>
+        <MainText>담당교사</MainText>
       </ClassChangeTitleList>
       {ClassChangeList.map((item) => (
         <DetailClassChangeList
@@ -40,15 +40,23 @@ const ListHeader = styled.div`
   display: flex;
   margin-top: 90px;
   justify-content: space-between;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold32};
-    width: 210px;
-  }
   div {
     display: flex;
     margin-bottom: 15px;
     gap: 45px;
   }
+`;
+
+const TitleText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold32};
+  color: ${({ theme }) => theme.colors.Gray900};
+  width: 210px;
+`;
+
+const MainText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold24};
+  color: ${({ theme }) => theme.colors.Gray800};
+  width: 125px;
 `;
 
 const ModifyButton = styled.button`
@@ -90,10 +98,6 @@ const ClassChangeTitleList = styled.div`
   border-radius: 8px;
   padding: 20px 47px;
   margin-top: 15px;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold24};
-    width: 125px;
-  }
 `;
 
 export default PlanDetailClassChange;

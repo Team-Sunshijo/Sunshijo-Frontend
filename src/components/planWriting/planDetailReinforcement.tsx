@@ -6,19 +6,19 @@ const PlanDetailReinforcement = () => {
   return(
     <>
       <ListHeader>
-        <p>결 보강 계획서</p>
+        <TitleText>결 보강 계획서</TitleText>
         <div>
           <ModifyButton>계획서 수정</ModifyButton>
           <AddButton>계획서 추가</AddButton>
         </div>
       </ListHeader>
       <ReinforcementTitleList>
-        <p>날짜(요일)</p>
-        <p>교시</p>
-        <p>학년-반</p>
-        <p>결강 과목</p>
-        <p>보강 계획</p>
-        <p>보강교사</p>
+        <MainText>날짜(요일)</MainText>
+        <MainText>교시</MainText>
+        <MainText>학년-반</MainText>
+        <MainText>결강 과목</MainText>
+        <MainText>보강 계획</MainText>
+        <MainText>보강교사</MainText>
       </ReinforcementTitleList>
       {ReinforcementList.map((item) => (
         <DetailReinforcementList 
@@ -38,15 +38,23 @@ const ListHeader = styled.div`
   display: flex;
   margin-top: 50px;
   justify-content: space-between;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold32};
-    width: 210px;
-  }
   div {
     display: flex;
     margin-bottom: 15px;
     gap: 45px;
   }
+`;
+
+const TitleText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold32};
+  color: ${({ theme }) => theme.colors.Gray900};
+  width: 210px;
+`;
+
+const MainText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold24};
+  color: ${({ theme }) => theme.colors.Gray800};
+  width: 125px;
 `;
 
 const ModifyButton = styled.button`
@@ -88,10 +96,6 @@ const ReinforcementTitleList = styled.div`
   justify-content: space-between;
   padding: 20px 47px;
   margin-top: 15px;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold24};
-    width: 125px;
-  }
 `;
 
 export default PlanDetailReinforcement;

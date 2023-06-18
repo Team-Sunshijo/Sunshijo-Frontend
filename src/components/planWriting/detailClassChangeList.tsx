@@ -17,20 +17,20 @@ const DetailClassChangeList = ({
       <ClassChangeList>
         <PlanClassChangeListBox>
           <ChangeBefore>
-            <p>{date}</p>
-            <p>{lesson}</p>
-            <p>{grade_class}</p>
-            <p>{subject_replace}</p>
+            <MainBeforeText>{date}</MainBeforeText>
+            <MainBeforeText>{lesson}</MainBeforeText>
+            <MainBeforeText>{grade_class}</MainBeforeText>
+            <MainBeforeText>{subject_replace}</MainBeforeText>
           </ChangeBefore>
           <ChangeAfter>
-            <p>{change_date}</p>
-            <p>{change_lesson}</p>
-            <p>{change_grade_class}</p>
-            <p>{replace_subject}</p>
+            <MainAfterText>{change_date}</MainAfterText>
+            <MainAfterText>{change_lesson}</MainAfterText>
+            <MainAfterText>{change_grade_class}</MainAfterText>
+            <MainAfterText>{replace_subject}</MainAfterText>
           </ChangeAfter>
         </PlanClassChangeListBox>
         <PlanClassChangeTeacherBox>
-          <p>{charge_teacher}</p>
+          <MainTeacherText>{charge_teacher}</MainTeacherText>
         </PlanClassChangeTeacherBox>
       </ClassChangeList>
     </>
@@ -49,15 +49,23 @@ const PlanClassChangeListBox = styled.div`
   border-radius: 8px 0 0 8px;
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
   padding: 0 54px;
-  p {
-    font: ${({ theme }) => theme.font.Regular24};
-    color: ${({ theme }) => theme.colors.Gray800};
-    width: 150px;
-    display: flex;
-  }
   :hover {
     border-color: ${({ theme }) => theme.colors.Main};
   }
+`;
+
+const MainBeforeText = styled.div`
+  font: ${({ theme }) => theme.font.Regular24};
+  color: ${({ theme }) => theme.colors.Gray800};
+  width: 150px;
+  display: flex;
+`;
+
+const MainAfterText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold24};
+  color: ${({ theme }) => theme.colors.Gray800};
+  width: 150px;
+  display: flex;
 `;
 
 const ChangeBefore = styled.div`
@@ -70,9 +78,6 @@ const ChangeAfter = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
-  p {
-    font: ${({ theme }) => theme.font.SemiBold24};
-  }
 `;
 
 const PlanClassChangeTeacherBox = styled.div`
@@ -81,13 +86,14 @@ const PlanClassChangeTeacherBox = styled.div`
   height: 180px;
   border-radius: 0 8px 8px 0;
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
-  p {
-    font: ${({ theme }) => theme.font.SemiBold24};
-    color: ${({ theme }) => theme.colors.Gray800};
-  }
   :hover {
     border-color: ${({ theme }) => theme.colors.Main};
   }
+`;
+
+const MainTeacherText = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold24};
+  color: ${({ theme }) => theme.colors.Gray800};
 `;
 
 export default DetailClassChangeList;
