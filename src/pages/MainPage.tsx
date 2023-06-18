@@ -1,7 +1,13 @@
+import Header from "../components/header";
 import Main from "../components/main";
 
 const MainPage = () => {
-  return <Main />;
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  );
 };
 
 export default MainPage;

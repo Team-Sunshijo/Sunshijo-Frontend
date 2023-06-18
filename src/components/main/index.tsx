@@ -7,7 +7,6 @@ import SchoolScheduleList from "../SchoolScheduleList";
 const Main = () => {
   return (
     <>
-      <Header />
       <_.Container>
         <TimeTable />
         <_.ScheduleWrapper>
