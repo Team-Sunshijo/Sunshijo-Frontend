@@ -40,7 +40,7 @@ export const Table = styled.div`
     height: 68px;
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.Gray300};
-    font: ${({ theme }) => theme.font.Regular16};
+    font: ${({ theme }) => theme.font.Regular24};
   }
   p {
     font: ${({ theme }) => theme.font.Medium12};
