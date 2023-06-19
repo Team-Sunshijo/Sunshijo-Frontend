@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PlanList } from "../contance/planList";
+import { PlanWList } from "../contance/index";
 import PlanWritingList from "./planWritingList";
 
 const PlanWriting = () => {
@@ -18,7 +18,7 @@ const PlanWriting = () => {
         <p>요청교사</p>
         <p>부담임</p>
       </TitleList>
-      {PlanList.map((item) => (
+      {PlanWList.map((item) => (
         <PlanWritingList
           date={item.date}
           reason={item.reason}
@@ -52,6 +52,7 @@ const ModifyButton = styled.button`
   background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
+
   font: ${({ theme }) => theme.font.SemiBold16};
   line-height: 160%;
   color: ${({ theme }) => theme.colors.White};
