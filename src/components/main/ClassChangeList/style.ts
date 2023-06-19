@@ -1,19 +1,7 @@
 import styled from "styled-components";
 
-export const ClassChangeWrapper = styled.div`
-  width: 400px;
-  height: 250px;
-  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.05),
-    0px 0px 0px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 13px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 15px 0;
-`;
-
 export const ClassChangeBox = styled.div`
-  padding: 0 10px;
+  padding: 0 20px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 10px;

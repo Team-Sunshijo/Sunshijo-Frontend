@@ -9,8 +9,12 @@ const Main = () => {
       <_.Container>
         <TimeTable />
         <_.ScheduleWrapper>
-          <ClassChangeList />
-          <SchoolScheduleList />
+          <_.ScheduleFrame>
+            <ClassChangeList />
+          </_.ScheduleFrame>
+          <_.ScheduleFrame>
+            <SchoolScheduleList />
+          </_.ScheduleFrame>
         </_.ScheduleWrapper>
       </_.Container>
     </>

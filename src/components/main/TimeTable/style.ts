@@ -13,8 +13,8 @@ export const ExplainText = styled.div`
 export const Table = styled.div`
   display: flex;
   flex-direction: column;
-  width: 600px;
-  height: 530px;
+  width: 650px;
+  height: 580px;
   overflow: hidden;
   box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.05),
     0px 0px 0px 1px rgba(0, 0, 0, 0.08);
@@ -36,8 +36,8 @@ export const Table = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 68px;
+    width: 108.3px;
+    height: 75px;
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.Gray300};
     font: ${({ theme }) => theme.font.Regular24};
@@ -48,17 +48,17 @@ export const Table = styled.div`
 `;
 
 export const Day = styled.div`
-  width: 600px;
-  height: 60px;
+  width: 650px;
+  height: 75px;
   background-color: ${({ theme }) => theme.colors.Main};
   box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.05),
     0px 0px 0px 1px rgba(0, 0, 0, 0.08);
   border-radius: 20px 20px 0px 0px;
-  padding-left: 99.8px;
+  padding-left: 106px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   span {
-    font: ${({ theme }) => theme.font.Regular16};
+    font: ${({ theme }) => theme.font.Regular24};
   }
 `;

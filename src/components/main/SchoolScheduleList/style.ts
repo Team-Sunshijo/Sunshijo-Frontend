@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-export const SchoolScheduleWrapper = styled.div`
-  width: 400px;
-  height: 250px;
-  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.05),
-    0px 0px 0px 1px rgba(0, 0, 0, 0.08);
-  border-radius: 13px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-top: 30px;
-  padding: 15px 0;
-`;
-
 export const TitleText = styled.div`
   display: flex;
   align-items: center;
@@ -28,8 +14,9 @@ export const TitleText = styled.div`
 export const ScheduleBox = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 12px;
   gap: 15px 0;
-  padding: 0 10px;
+  padding: 0 20px;
   overflow-y: scroll;
   ::-webkit-scrollbar {
     width: 10px;

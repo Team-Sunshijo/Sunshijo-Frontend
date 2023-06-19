@@ -4,7 +4,7 @@ import { NextIcon } from "../../../assets/icons";
 
 const SchoolScheduleList = () => {
   return (
-    <_.SchoolScheduleWrapper>
+    <>
       <_.TitleText>
         <img src={PreviousIcon} />
         2023년 5월
@@ -68,7 +68,7 @@ const SchoolScheduleList = () => {
           <_.Event>프로젝트반</_.Event>
         </_.SchoolSchedule>
       </_.ScheduleBox>
-    </_.SchoolScheduleWrapper>
+    </>
   );
 };
 
