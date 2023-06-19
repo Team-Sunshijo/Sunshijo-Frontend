@@ -5,6 +5,15 @@ export interface ListProps {
       teacher: string;
 }
 
+export interface TimetableListProps{
+      date: string;
+      grade_class: string;
+      subject: string;
+      teacher: string;
+      reason:string;
+      state:string;
+}
+
 export interface PlanWListProps {
       date: string;
       reason: string;

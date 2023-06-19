@@ -1,4 +1,4 @@
-export const List=[
+export const List = [
   {
     date: "2023-5-2",
     grade_class: "2-3",
@@ -34,6 +34,57 @@ export const List=[
     grade_class: "2-3",
     subject: "임베",
     teacher: "김한비",
+  },
+];
+
+export const TimetableList = [
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
   },
 ];
 
@@ -151,4 +202,3 @@ export const ClassChangeList = [
     charge_teacher: "김한비",
   },
 ]
-
