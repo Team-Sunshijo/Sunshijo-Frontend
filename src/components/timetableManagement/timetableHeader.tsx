@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import Dropdown from "../common/dropDown";
-import {
-  PlanDropDownItem,
-  StateDropDownItem,
-} from "../../constant/timetableManagement";
+import { PlanDropDownItem,StateDropDownItem } from "../../constant/timetableManagement";
 
 const TimetableHeader = () => {
   return (
