@@ -1,59 +1,26 @@
 import styled from "styled-components";
-import { SignPerson } from "../../assets/icons";
 
 const Login = () => {
   return (
-    <Container>
-      <Wrapper>
-        <IconWrapper>
-          <img src={SignPerson} alt="" />
-        </IconWrapper>
-        <Content>
-          <TitleText>로그인</TitleText>
-          <ContentText>아이디</ContentText>
-          <Input placeholder="아이디를 입력해주세요." />
-          <ContentText>비밀번호</ContentText>
-          <Input placeholder="비밀번호를 입력해주세요." />
-          <LoginBtn>로그인</LoginBtn>
-          <CheckWrapper>
-            <CheckText>계정이 없으신가요? </CheckText>
-            <SignupText>회원가입하기</SignupText>
-          </CheckWrapper>
-        </Content>
-      </Wrapper>
-    </Container>
+    <Content>
+      <TitleText>로그인</TitleText>
+      <ContentText>아이디</ContentText>
+      <Input placeholder="아이디를 입력해주세요." />
+      <ContentText>비밀번호</ContentText>
+      <Input placeholder="비밀번호를 입력해주세요." />
+      <LoginBtn>로그인</LoginBtn>
+      <CheckWrapper>
+        <CheckText>계정이 없으신가요? </CheckText>
+        <SignupText>회원가입하기</SignupText>
+      </CheckWrapper>
+    </Content>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  height: 475px;
-  background-color: ${({ theme }) => theme.colors.White};
-  border-radius: 16px;
-  border: solid 1px ${({ theme }) => theme.colors.Main};
-  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
-`;
-
-const IconWrapper = styled.div`
-  width: 218px;
-  background-color: ${({ theme }) => theme.colors.Main};
-  border-radius: 16px 0 0 16px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-`;
 
 const Content = styled.div`
   width: 509px;
   height: 430px;
-  padding: 44px 100px;
+  padding: 30px 100px;
 `;
 
 const ContentText = styled.div`
@@ -88,7 +55,7 @@ const LoginBtn = styled.button`
   border: none;
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.Main};
-  margin: 47px 0 17px 0;
+  margin: 30px 0 17px 0;
   color: ${({ theme }) => theme.colors.White};
   font: ${({ theme }) => theme.font.SemiBold16};
   cursor: pointer;
