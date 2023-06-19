@@ -25,6 +25,7 @@ export const ClassChangeBox = styled.div`
   ::-webkit-scrollbar-track {
     background-color: ${({ theme }) => theme.colors.Gray300};
     border-radius: 10px;
+    margin-top: 12px;
   }
 `;
 
