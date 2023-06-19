@@ -21,6 +21,7 @@ const HeaderArea = styled.div`
   width: 100vw;
   height: 30px;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   display: flex;
