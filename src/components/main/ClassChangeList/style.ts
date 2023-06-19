@@ -9,6 +9,7 @@ export const ClassChangeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px 0;
 `;
 
 export const ClassChangeBox = styled.div`
@@ -53,7 +54,6 @@ export const Class = styled.div`
 
 export const TitleText = styled.div`
   font: ${({ theme }) => theme.font.SemiBold20};
-  margin: 20px 0 0 0;
   display: flex;
   align-items: center;
   img {

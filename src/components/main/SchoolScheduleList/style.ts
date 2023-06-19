@@ -11,12 +11,12 @@ export const SchoolScheduleWrapper = styled.div`
   align-items: center;
   gap: 12px;
   margin-top: 30px;
+  padding: 15px 0;
 `;
 
 export const TitleText = styled.div`
   display: flex;
   align-items: center;
-  margin: 20px 0 0 0;
   font: ${({ theme }) => theme.font.SemiBold20};
   img {
     height: 20px;
