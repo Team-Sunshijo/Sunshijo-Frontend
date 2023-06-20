@@ -31,9 +31,16 @@ const Box = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 449px;
+height: 65px;
+:hover{
+  background-color: ${({theme})=>theme.colors.Gray100};
+}
+border-radius: 8px;
 `;
 
-const TextBox = styled.div``;
+const TextBox = styled.div`
+  `;
 
 const ContentText = styled.div<{ state: number }>`
   color: ${(props) =>
