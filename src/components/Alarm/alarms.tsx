@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import connection from "../../assets/icons/Connection.svg";
-import circle from "../../assets/icons/circle.png";
+import circle from "../../assets/icons/Circle.svg";
 
 type Props = {
   state: number;
