@@ -1,4 +1,4 @@
-import Login from "../components/Login";
+import Login from "../components/login";
 import SignFrame from "../components/common/SignFrame";
 
 const LoginPage = () => {

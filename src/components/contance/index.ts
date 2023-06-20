@@ -1,4 +1,4 @@
-export const List=[
+export const List = [
   {
     date: "2023-5-2",
     grade_class: "2-3",
@@ -37,3 +37,168 @@ export const List=[
   },
 ];
 
+export const TimetableList = [
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+  {
+    date: "2023-5-2",
+    grade_class: "3-1",
+    subject: "한국사",
+    teacher: "김한비",
+    reason: "보강",
+    state: "요청중",
+  },
+];
+
+export const PlanWList = [
+  {
+    date: "2023-5-2",
+    reason: "출장",
+    request_teacher: "김광석",
+    middle_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    reason: "출장",
+    request_teacher: "김광석",
+    middle_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    reason: "출장",
+    request_teacher: "김광석",
+    middle_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    reason: "출장",
+    request_teacher: "김광석",
+    middle_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    reason: "출장",
+    request_teacher: "김광석",
+    middle_teacher: "김한비",
+  },
+];
+
+export const ReinforcementList = [
+  {
+    date: "2023-5-2",
+    lesson: "1교시",
+    grade_class: "2-3",
+    missing_subjects: "수학",
+    reinforcement_plan: "보충수업",
+    reinforcement_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    lesson: "1교시",
+    grade_class: "2-3",
+    missing_subjects: "수학",
+    reinforcement_plan: "보충수업",
+    reinforcement_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    lesson: "1교시",
+    grade_class: "2-3",
+    missing_subjects: "수학",
+    reinforcement_plan: "보충수업",
+    reinforcement_teacher: "김한비",
+  },
+  {
+    date: "2023-5-2",
+    lesson: "1교시",
+    grade_class: "2-3",
+    missing_subjects: "수학",
+    reinforcement_plan: "보충수업",
+    reinforcement_teacher: "김한비",
+  },
+];
+
+export const ClassChangeList = [
+  {
+    date: "2023-2-20",
+    lesson: "3교시",
+    grade_class: "2-1",
+    subject_replace: "수학",
+    change_date: "2023-2-21",
+    change_lesson: "5교시",
+    change_grade_class: "2-3",
+    replace_subject: "한국사",
+    charge_teacher: "김한비",
+  },
+  {
+    date: "2023-2-20",
+    lesson: "3교시",
+    grade_class: "2-1",
+    subject_replace: "수학",
+    change_date: "2023-2-21",
+    change_lesson: "5교시",
+    change_grade_class: "2-3",
+    replace_subject: "한국사",
+    charge_teacher: "김한비",
+  },
+  {
+    date: "2023-2-20",
+    lesson: "3교시",
+    grade_class: "2-1",
+    subject_replace: "수학",
+    change_date: "2023-2-21",
+    change_lesson: "5교시",
+    change_grade_class: "2-3",
+    replace_subject: "한국사",
+    charge_teacher: "김한비",
+  },
+  {
+    date: "2023-2-20",
+    lesson: "3교시",
+    grade_class: "2-1",
+    subject_replace: "수학",
+    change_date: "2023-2-21",
+    change_lesson: "5교시",
+    change_grade_class: "2-3",
+    replace_subject: "한국사",
+    charge_teacher: "김한비",
+  },
+]
