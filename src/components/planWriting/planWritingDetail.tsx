@@ -17,6 +17,13 @@ const PlanWritingDetailList = () => {
       </MainList>
       <PlanDetailReinforcement />
       <PlanDetailClassChange />
+      <Bottom>
+        <BottomButton>이전 페이지</BottomButton>
+        <div>
+          <RequestButton>시간표 요청하기</RequestButton>
+          <BottomButton>PDF 출력</BottomButton>
+        </div>
+      </Bottom>
     </Container>
   );
 };
@@ -59,6 +66,51 @@ const MainList = styled.div`
     border: 0;
     outline: none;
     width: 130px;
+  }
+`;
+
+const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  div{
+    display: flex;
+    gap: 45px;
+  }
+`;  
+
+const BottomButton = styled.button`
+  justify-content: center;
+  padding: 11px 24px;
+  width: 122px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.Main};
+  border: none;
+  border-radius: 8px;
+  margin-top: 25px;
+
+  font: ${({ theme }) => theme.font.SemiBold16};
+  line-height: 160%;
+  color: ${({ theme }) => theme.colors.White};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
+  }
+`;
+
+const RequestButton = styled.button`
+  justify-content: center;
+  padding: 11px 24px;
+  width: 152px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.Main};
+  border: none;
+  border-radius: 8px;
+  margin-top: 25px;
+
+  font: ${({ theme }) => theme.font.SemiBold16};
+  line-height: 160%;
+  color: ${({ theme }) => theme.colors.White};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
