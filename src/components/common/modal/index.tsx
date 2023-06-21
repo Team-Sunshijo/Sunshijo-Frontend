@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Children, ReactElement } from "react";
+import {  ReactElement } from "react";
 
 interface props {
   open: boolean;
@@ -8,35 +8,18 @@ interface props {
 }
 
 const DefaultModal = (props: props): ReactElement => {
-  const { open, close ,children} = props;
+  const { children} = props;
 
   return (
     <ModalContainer>
       <ModalBox>
         {children}
-        <div>
-          <Button onClick={() => close(false)}>취소</Button>
-          <Button>등록</Button>
-        </div>
       </ModalBox>
     </ModalContainer>
   );
 };
 
-const Button=styled.button`
-   margin-top: 32px;
-    width: 109px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.Main};
-    border-radius: 8px;
-    border: none;
-    gap: 20px;
-    color: ${({ theme }) => theme.colors.White};
-    font: ${({ theme }) => theme.font.SemiBold16};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.Main800}
-    };
-`
+
 
 const ModalContainer = styled.div`
   display: block;

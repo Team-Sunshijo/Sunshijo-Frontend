@@ -6,6 +6,7 @@ import Dropdown from "../common/dropDown";
 import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
 import Calendar from "../common/calender";
 import DefaultModal from "../common/modal";
+
 const Performance = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
 
@@ -16,12 +17,15 @@ const Performance = () => {
   function closeModal() {
     setIsModal(false);
   }
+  function handleCancel() {
+    closeModal();
+  }
 
   return (
     <Container>
       <Header>
         <p>수행평가 등록</p>
-        <Button onClick={openModal}>수행평가 등록</Button>
+        <PerformanceAddButton onClick={openModal}>수행평가 등록</PerformanceAddButton>
         {isModal && <DefaultModal open={isModal} close={closeModal}  >
         <p>수행평가 등록</p>
         <Calendar/>
@@ -30,6 +34,10 @@ const Performance = () => {
           <Dropdown options={classDropDownItem} width={113} />
         </DropContainer>
         <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
+        <div>
+          <Button onClick={handleCancel}>취소</Button>
+          <Button>등록</Button>
+        </div>
         </DefaultModal> }
       </Header>
       <TitleRow>
@@ -49,6 +57,21 @@ const Performance = () => {
     </Container>
   );
 };
+
+const Button=styled.button`
+   margin-top: 32px;
+    width: 109px;
+    height: 48px;
+    background-color: ${({ theme }) => theme.colors.Main};
+    border-radius: 8px;
+    border: none;
+    gap: 20px;
+    color: ${({ theme }) => theme.colors.White};
+    font: ${({ theme }) => theme.font.SemiBold16};
+    :hover {
+      background-color: ${({ theme }) => theme.colors.Main800}
+    };
+`
 
 const PerformanceInput = styled.textarea`
   ::-webkit-scrollbar {
@@ -106,7 +129,7 @@ const Header = styled.div`
   justify-content: space-between;
   display: flex;
 `;
-const Button = styled.button`
+const PerformanceAddButton  = styled.button`
   width: 136px;
   height: 48px;
   left: 1619px;
