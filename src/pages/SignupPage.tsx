@@ -1,5 +1,5 @@
-import SignFrame from "../components/common/SignFrame";
-import Signup from "../components/Signup";
+import SignFrame from "../components/common/signFrame";
+import Signup from "../components/signup";
 
 const SignupPage = () => {
   return (
