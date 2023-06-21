@@ -2,8 +2,10 @@ import styled from "styled-components";
 import { List } from "../contance";
 import PerformanceList from "./performancelist";
 import {useState } from "react";
-import PerformanceModal from "./performanceModal";
-
+import Dropdown from "../common/dropDown";
+import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
+import Calendar from "../common/calender";
+import DefaultModal from "../common/modal";
 const Performance = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
 
@@ -20,7 +22,15 @@ const Performance = () => {
       <Header>
         <p>수행평가 등록</p>
         <Button onClick={openModal}>수행평가 등록</Button>
-        {isModal && <PerformanceModal open={isModal} close={closeModal}  /> }
+        {isModal && <DefaultModal open={isModal} close={closeModal}  >
+        <p>수행평가 등록</p>
+        <Calendar/>
+        <DropContainer>
+          <Dropdown options={gradeDropDownItem} width={113} />
+          <Dropdown options={classDropDownItem} width={113} />
+        </DropContainer>
+        <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
+        </DefaultModal> }
       </Header>
       <TitleRow>
         <p>날짜(요일)</p>
@@ -40,11 +50,53 @@ const Performance = () => {
   );
 };
 
+const PerformanceInput = styled.textarea`
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.Main};
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.Gray200};
+    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 5px white;
+  }
+  margin-top: 30px;
+  padding: 20px 30px;
+  border-radius: 16px;
+  width: 656px;
+  height: 260px;
+  background-color: ${({ theme }) => theme.colors.Gray100};
+  color: ${({ theme }) => theme.colors.Black};
+  border: none;
+  font: ${({ theme }) => theme.font.Regular24};
+  :focus {
+    outline: none;
+    color: ${({ theme }) => theme.colors.Gray800};
+  }
+  ::placeholder {
+    color: ${({ theme }) => theme.colors.Gray400};
+    position: absolute;
+    width: 288px;
+    height: 30px;
+    left: 30px;
+    top: 20px;
+  }
+`;
+const DropContainer=styled.div`
+  display: flex;
+  gap: 30px;
+ margin-top: 25px;
+ margin-right: auto;
+`
 const Container = styled.div`
   padding: 0 165px;
 `;
 const Header = styled.div`
-  p {
+  >p {
     font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
     height: 30px;

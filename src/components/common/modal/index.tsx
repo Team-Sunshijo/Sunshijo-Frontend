@@ -1,27 +1,19 @@
 import styled from "styled-components";
-import Dropdown from "../common/dropDown";
-import { ReactElement } from "react";
-import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
-import Calendar from "../common/calender";
+import { Children, ReactElement } from "react";
 
 interface props {
   open: boolean;
   close: (v: boolean) => void;
+  children: React.ReactNode;
 }
 
-const PerformanceModal = (props: props): ReactElement => {
-  const { open, close } = props;
+const DefaultModal = (props: props): ReactElement => {
+  const { open, close ,children} = props;
 
   return (
     <ModalContainer>
       <ModalBox>
-        <p>수행평가 등록</p>
-        <Calendar/>
-        <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113} />
-          <Dropdown options={classDropDownItem} width={113} />
-        </DropContainer>
-        <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
+        {children}
         <div>
           <Button onClick={() => close(false)}>취소</Button>
           <Button>등록</Button>
@@ -45,12 +37,7 @@ const Button=styled.button`
       background-color: ${({ theme }) => theme.colors.Main800}
     };
 `
-const DropContainer = styled.div`
-  display: flex;
-  gap: 30px;
- margin-top: 25px;
- margin-right: auto;
-`;
+
 const ModalContainer = styled.div`
   display: block;
   width: 100%;
@@ -126,4 +113,4 @@ const PerformanceInput = styled.textarea`
     top: 20px;
   }
 `;
-export default PerformanceModal;
+export default DefaultModal;
