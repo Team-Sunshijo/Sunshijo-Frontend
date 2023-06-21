@@ -1,4 +1,4 @@
-import Alarm from "../components/Alarm";
+import Alarm from "../components/alarm";
 
 const AlarmPage = () => {
   return (

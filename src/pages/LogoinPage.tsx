@@ -1,5 +1,5 @@
 import Login from "../components/login";
-import SignFrame from "../components/common/SignFrame";
+import SignFrame from "../components/common/signFrame";
 
 const LoginPage = () => {
   return (
