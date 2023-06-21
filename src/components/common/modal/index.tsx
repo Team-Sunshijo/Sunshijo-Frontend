@@ -1,42 +1,45 @@
 import styled from "styled-components";
-import Dropdown from "../common/dropDown";
-import { ReactElement } from "react";
-import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
+import { Children, ReactElement } from "react";
 
 interface props {
   open: boolean;
   close: (v: boolean) => void;
+  children: React.ReactNode;
 }
 
-const PerformanceModal = (props: props): ReactElement => {
-  const { open, close } = props;
+const DefaultModal = (props: props): ReactElement => {
+  const { open, close ,children} = props;
 
   return (
     <ModalContainer>
       <ModalBox>
-        <p>수행평가 등록</p>
-        <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113} />
-          <Dropdown options={classDropDownItem} width={113} />
-        </DropContainer>
-        <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
+        {children}
         <div>
-          <button onClick={() => close(false)}>취소</button>
-          <button>등록</button>
+          <Button onClick={() => close(false)}>취소</Button>
+          <Button>등록</Button>
         </div>
       </ModalBox>
     </ModalContainer>
   );
 };
 
-const DropContainer = styled.div`
-  margin-right: auto;
-  display: flex;
-  gap: 30px;
-  width: 473px;
-  margin-top: 90px;
-`;
+const Button=styled.button`
+   margin-top: 32px;
+    width: 109px;
+    height: 48px;
+    background-color: ${({ theme }) => theme.colors.Main};
+    border-radius: 8px;
+    border: none;
+    gap: 20px;
+    color: ${({ theme }) => theme.colors.White};
+    font: ${({ theme }) => theme.font.SemiBold16};
+    :hover {
+      background-color: ${({ theme }) => theme.colors.Main800}
+    };
+`
+
 const ModalContainer = styled.div`
+  display: block;
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -56,7 +59,6 @@ const ModalBox = styled.div`
   cursor: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
   background-color: ${({ theme }) => theme.colors.White};
@@ -66,25 +68,12 @@ const ModalBox = styled.div`
     margin-top: 0;
     color: ${({ theme }) => theme.colors.Black};
     font: ${({ theme }) => theme.font.SemiBold32};
-    margin-right: auto;
-  }
-  button {
-    margin-top: 32px;
-    width: 109px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.Main};
-    border-radius: 8px;
-    border: none;
-    gap: 20px;
-    color: ${({ theme }) => theme.colors.White};
-    font: ${({ theme }) => theme.font.SemiBold16};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.Main800};
-    }
+  
   }
   > div {
     display: flex;
     gap: 75px;
+    justify-content: center;
   }
 `;
 
@@ -124,4 +113,4 @@ const PerformanceInput = styled.textarea`
     top: 20px;
   }
 `;
-export default PerformanceModal;
+export default DefaultModal;

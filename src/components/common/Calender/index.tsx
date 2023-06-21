@@ -27,18 +27,22 @@ const Calendar = () => {
 };
 
 const DatePickerComponent = styled(DatePicker)`
+ float: left;
   width: 210px;
   height: 40px;
   background-color: ${({ theme }) => theme.colors.White};
-  background: no-repeat calc(100% - 25px) center url(${CalendarIcon});
+  background: no-repeat calc(100% - 13px) center url(${CalendarIcon});
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
   border-radius: 5px;
   padding: 5px 25px;
-  font: ${({ theme }) => theme.font.Regular16};
+  font: ${({ theme }) => theme.font.Regular24};
   :focus {
     border: 1px;
     outline-color: ${({ theme }) => theme.colors.Main};
   }
+  margin-top: 35px;
+float: left;
+
 `;
 
 
