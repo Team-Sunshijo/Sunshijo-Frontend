@@ -9,16 +9,9 @@ import { gradeDropDownItem, classDropDownItem,timeDropDownItem, subjectDropDownI
 
 const PlanDetailReinforcement = () => {
 
-  const [isModifyModalOpen, setIsModifyModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
-  function openModifyModal() {
-    setIsModifyModalOpen(true);
-  }
 
-  function closeModifyModal() {
-    setIsModifyModalOpen(false);
-  }
 
   function openAddModal() {
     setIsAddModalOpen(true);
@@ -29,29 +22,13 @@ const PlanDetailReinforcement = () => {
   }
 
   function handleCancel() {
-    closeModifyModal();
+
     closeAddModal();
   }
   return(
     <>
       <ListHeader>
         <TitleText>결 보강 계획서</TitleText>
-        <ButtonsWrapper>
-          <ModifyButton onClick={openModifyModal}>계획서 수정</ModifyButton>
-          {isModifyModalOpen && <DefaultModal height={590} open={isModifyModalOpen} close={closeModifyModal}  >
-          <p>결보강 계획서 수정</p>
-    <div><Calendar/><Dropdown options={subjectDropDownItem} width={130}/></div>
-  <DropContainer>
-    <Dropdown options={gradeDropDownItem} width={113} />
-    <Dropdown options={classDropDownItem} width={113} />
-    <Dropdown options={timeDropDownItem} width={113} />
-  </DropContainer>
-  <PerformanceInput placeholder="보강 계획을 입력해주세요." />
-  <Div>
-    <Button onClick={handleCancel}>취소</Button>
-    <Button>등록</Button>
-  </Div>
-            </DefaultModal>}
           <AddButton onClick={openAddModal}>계획서 추가</AddButton>
           {isAddModalOpen && <DefaultModal height={590} open={isAddModalOpen} close={closeAddModal}  >
           <p>결보강 계획서 추가 </p>
@@ -67,7 +44,7 @@ const PlanDetailReinforcement = () => {
           <Button>등록</Button>
         </Div>
             </DefaultModal>}
-        </ButtonsWrapper>
+      
       </ListHeader>
       <ReinforcementTitleList>
         <MainText>날짜(요일)</MainText>
@@ -90,12 +67,6 @@ const PlanDetailReinforcement = () => {
     </>
   );
 };
-
-const ButtonsWrapper=styled.div`
-  display: flex;
-    margin-bottom: 15px;
-    gap: 45px;
-`
 
 const Div=styled.div`
   display: flex;
@@ -130,21 +101,6 @@ const MainText = styled.div`
   width: 125px;
 `;
 
-const ModifyButton = styled.button`
-  justify-content: center;
-  padding: 11px 24px;
-  width: 122px;
-  height: 48px;
-  background-color: ${({ theme }) => theme.colors.Main};
-  border: none;
-  border-radius: 8px;
-  font: ${({ theme }) => theme.font.SemiBold16};
-  line-height: 160%;
-  color: ${({ theme }) => theme.colors.White};
-  :hover {
-    background-color: ${({ theme }) => theme.colors.Main800};
-  }
-`;
 
 const AddButton = styled.button`
   width: 122px;
@@ -170,7 +126,6 @@ const ReinforcementTitleList = styled.div`
   padding: 20px 47px;
   margin-top: 15px;
 `;
-
 
 const Button=styled.button`
    margin-top: 32px;
@@ -223,13 +178,12 @@ const PerformanceInput = styled.textarea`
     top: 20px;
   }
 `;
+
 const DropContainer=styled.div`
   display: flex;
   gap: 30px;
  margin-top: 25px;
  margin-right: auto;
 `
-
-
 
 export default PlanDetailReinforcement;
