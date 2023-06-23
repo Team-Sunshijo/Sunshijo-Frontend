@@ -36,7 +36,7 @@ const PlanDetailReinforcement = () => {
     <>
       <ListHeader>
         <TitleText>결 보강 계획서</TitleText>
-        <div>
+        <ButtonsWrapper>
           <ModifyButton onClick={openModifyModal}>계획서 수정</ModifyButton>
           {isModifyModalOpen && <DefaultModal height={590} open={isModifyModalOpen} close={closeModifyModal}  >
           <p>결보강 계획서 수정</p>
@@ -67,7 +67,7 @@ const PlanDetailReinforcement = () => {
           <Button>등록</Button>
         </Div>
             </DefaultModal>}
-        </div>
+        </ButtonsWrapper>
       </ListHeader>
       <ReinforcementTitleList>
         <MainText>날짜(요일)</MainText>
@@ -91,10 +91,17 @@ const PlanDetailReinforcement = () => {
   );
 };
 
+const ButtonsWrapper=styled.div`
+  display: flex;
+    margin-bottom: 15px;
+    gap: 45px;
+`
+
 const Div=styled.div`
   display: flex;
   justify-content: center;
   gap: 45px;
+  
 `
 const ListHeader = styled.div`
   display: flex;
@@ -102,8 +109,6 @@ const ListHeader = styled.div`
   justify-content: space-between;
   >div {
     display: flex;
-    margin-bottom: 15px;
-   
   }
   p {
     color: ${({ theme }) => theme.colors.Black};
