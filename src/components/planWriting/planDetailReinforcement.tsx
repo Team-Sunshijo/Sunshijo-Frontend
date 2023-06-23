@@ -94,6 +94,7 @@ const PlanDetailReinforcement = () => {
 const Div=styled.div`
   display: flex;
   justify-content: center;
+  gap: 45px;
 `
 const ListHeader = styled.div`
   display: flex;
@@ -102,7 +103,7 @@ const ListHeader = styled.div`
   >div {
     display: flex;
     margin-bottom: 15px;
-    gap: 45px;
+   
   }
   p {
     color: ${({ theme }) => theme.colors.Black};

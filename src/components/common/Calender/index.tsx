@@ -35,6 +35,7 @@ const DatePickerComponent = styled(DatePicker)`
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
   border-radius: 5px;
   padding: 5px 25px;
+  margin-right: 30px;
   font: ${({ theme }) => theme.font.Regular24};
   :focus {
     border: 1px;

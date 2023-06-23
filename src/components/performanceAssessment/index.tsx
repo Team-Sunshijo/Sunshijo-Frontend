@@ -34,10 +34,10 @@ const Performance = () => {
           <Dropdown options={classDropDownItem} width={113} />
         </DropContainer>
         <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
-        <div>
+        <ButtonWrapper>
           <Button onClick={handleCancel}>취소</Button>
           <Button>등록</Button>
-        </div>
+        </ButtonWrapper>
         </DefaultModal> }
       </Header>
       <TitleRow>
@@ -57,6 +57,13 @@ const Performance = () => {
     </Container>
   );
 };
+
+const ButtonWrapper=styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+`
+
 const MainTitle=styled.div`
     font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
