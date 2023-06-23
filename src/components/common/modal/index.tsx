@@ -20,8 +20,6 @@ const DefaultModal = (props: props): ReactElement => {
   );
 };
 
-
-
 const ModalContainer = styled.div`
   display: block;
   width: 100%;
@@ -38,7 +36,7 @@ const ModalContainer = styled.div`
 `;
 
 const ModalBox = styled.div<{ height: number }>`
- height: ${({height }) => height}px;
+  height: ${({height }) => height}px;
   width: 736px;
   cursor: auto;
   display: flex;
@@ -48,6 +46,13 @@ const ModalBox = styled.div<{ height: number }>`
   background-color: ${({ theme }) => theme.colors.White};
   padding: 30px 40px;
   z-index: 1;
+  p {
+    margin-top: 0;
+    color: ${({ theme }) => theme.colors.Black};
+    font: ${({ theme }) => theme.font.SemiBold32};
+    display: flex;
+    justify-content: center;
+  }
   > div {
     display: flex;
     gap: 75px;
