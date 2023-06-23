@@ -51,7 +51,6 @@ const ModalBox = styled.div<{ height: number }>`
   > div {
     display: flex;
     gap: 75px;
-    
   }
 `;
 
