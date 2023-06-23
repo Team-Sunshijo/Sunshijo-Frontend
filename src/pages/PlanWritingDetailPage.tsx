@@ -1,4 +1,4 @@
-import PlanWritingDetail from "../components/planWriting/planWritingDetail";
+import PlanWritingDetail from "../components/planWritingDetail/planWritingDetail";
 
 const PlanWritingDetailPage = () => {
   return <PlanWritingDetail />;

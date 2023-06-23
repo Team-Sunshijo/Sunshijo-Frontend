@@ -41,3 +41,8 @@ export interface ClassChangeListProps {
       replace_subject: string;
       charge_teacher: string;
 }
+
+export interface modalTextListProps {
+      main_text: string,
+      sub_text: string
+}

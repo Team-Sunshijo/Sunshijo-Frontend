@@ -3,7 +3,7 @@ import { ClassChangeList } from "../contance/index";
 import DetailClassChangeList from "./detailClassChangeList";
 
 const PlanDetailClassChange = () => {
-  return(
+  return (
     <>
       <ListHeader>
         <TitleText>수업교체 계획서</TitleText>
