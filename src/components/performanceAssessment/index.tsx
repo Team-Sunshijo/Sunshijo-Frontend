@@ -24,9 +24,9 @@ const Performance = () => {
   return (
     <Container>
       <Header>
-        <p>수행평가 등록</p>
+        <MainTitle>수행평가 등록</MainTitle>
         <PerformanceAddButton onClick={openModal}>수행평가 등록</PerformanceAddButton>
-        {isModal && <DefaultModal open={isModal} close={closeModal}  >
+        {isModal && <DefaultModal height={590} open={isModal} close={closeModal}  >
         <p>수행평가 등록</p>
         <Calendar/>
         <DropContainer>
@@ -57,7 +57,13 @@ const Performance = () => {
     </Container>
   );
 };
-
+const MainTitle=styled.div`
+    font: ${({ theme }) => theme.font.SemiBold32};
+    width: 174px;
+    height: 30px;
+    color: ${({ theme }) => theme.colors.Gray900};
+    margin-top: 151px;
+`
 const Button=styled.button`
    margin-top: 32px;
     width: 109px;
@@ -119,12 +125,12 @@ const Container = styled.div`
   padding: 0 165px;
 `;
 const Header = styled.div`
-  >p {
+  p {
     font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
     height: 30px;
     color: ${({ theme }) => theme.colors.Gray900};
-    margin-top: 151px;
+    margin-bottom: 25px;
   }
   justify-content: space-between;
   display: flex;

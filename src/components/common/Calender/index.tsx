@@ -40,8 +40,7 @@ const DatePickerComponent = styled(DatePicker)`
     border: 1px;
     outline-color: ${({ theme }) => theme.colors.Main};
   }
-  margin-top: 35px;
-float: left;
+ 
 
 `;
 
