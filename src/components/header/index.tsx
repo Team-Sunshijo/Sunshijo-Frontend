@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Alram } from "../../assets/icons";
 import DefaultModal from "../common/modal";
-import {useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal() {
@@ -16,56 +16,62 @@ const Header = () => {
   }
 
   function handleCancel() {
-
     closeModal();
   }
+
   return (
     <HeaderArea>
       <Logo>로고</Logo>
       <Pages>
-        <p>시간표 변경</p>
-        <p>시간표 관리</p>
-        <p>수행평가 등록</p>
+        <Link to="planWritingDetail">
+          <p>시간표 변경</p>
+        </Link>
+        <Link to="timetableManagement">
+          <p>시간표 관리</p>
+        </Link>
+        <Link to="performance">
+          <p>수행평가 등록</p>
+        </Link>
         <img src={Alram} />
         <AcountButton onClick={openModal}>로그아웃</AcountButton>
-        {isModalOpen && <DefaultModal height={300} open={isModalOpen} close={closeModal} >
-          <MainTitle>로그아웃 하시겠습니까?</MainTitle>
-        <Div>
-          <Button onClick={handleCancel}>취소</Button>
-          <Button>로그아웃</Button>
-        </Div>
-        </DefaultModal>}
-
+        {isModalOpen && (
+          <DefaultModal height={300} open={isModalOpen} close={closeModal}>
+            <MainTitle>로그아웃 하시겠습니까?</MainTitle>
+            <Div>
+              <Button onClick={handleCancel}>취소</Button>
+              <Button>로그아웃</Button>
+            </Div>
+          </DefaultModal>
+        )}
       </Pages>
     </HeaderArea>
   );
 };
 
-
-
-const MainTitle=styled.div`
-  font: ${({theme})=>theme.font.SemiBold32};
+const MainTitle = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold32};
   justify-content: center;
   margin-top: 35px;
+`;
 
-`
-const Button=styled.button`
-   margin-top: 55px;
-    width: 109px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.Main};
-    border-radius: 8px;
-    border: none;
-    gap: 20px;
-    color: ${({ theme }) => theme.colors.White};
-    font: ${({ theme }) => theme.font.SemiBold16};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.Main800}
-    };
-`
+const Button = styled.button`
+  margin-top: 55px;
+  width: 109px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.Main};
+  border-radius: 8px;
+  border: none;
+  gap: 20px;
+  color: ${({ theme }) => theme.colors.White};
+  font: ${({ theme }) => theme.font.SemiBold16};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
+  }
+`;
 
 const HeaderArea = styled.div`
   font: ${({ theme }) => theme.font.Regular16};
+  background-color: ${({ theme }) => theme.colors.White};
   width: 100vw;
   height: 30px;
   position: fixed;
@@ -84,12 +90,11 @@ const HeaderArea = styled.div`
   }
 `;
 
-const Div=styled.div`
+const Div = styled.div`
   display: flex;
   justify-content: center;
   gap: 45px;
-  
-`
+`;
 
 const Logo = styled.div`
   cursor: pointer;
@@ -110,8 +115,8 @@ const AcountButton = styled.button`
   border: 1px solid ${({ theme }) => theme.colors.Main};
   border-radius: 8px;
   padding: 6px 12px;
-  :hover{
-    background-color: ${({theme})=>theme.colors.Main800};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
