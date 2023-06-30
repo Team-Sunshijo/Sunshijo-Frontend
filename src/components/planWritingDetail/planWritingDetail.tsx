@@ -4,19 +4,31 @@ import PlanDetailReinforcement from "./planDetailReinforcement";
 import { useState } from "react";
 import DefaultModal from "../common/modal";
 import Calendar from "../common/calender";
+import { ModalTextList } from "../contance/modalList";
 
 const PlanWritingDetailList = () => {
-  const [isModal, setIsModal] = useState<boolean>(false);
+  const [isCheckRequestModal, setIsCheckRequestModal] = useState<boolean>(false);
+  const [isCheckPrintModal, setIsCheckPrintModal] = useState<boolean>(false);
 
-  function openModal() {
-    setIsModal(true);
+  function openCheckRequestModal() {
+    setIsCheckRequestModal(true);
   }
 
-  function closeModal() {
-    setIsModal(false);
+  function openCheckPrintModal() {
+    setIsCheckPrintModal(true);
   }
+
+  function closeCheckRequestModal() {
+    setIsCheckRequestModal(false);
+  }
+
+  function closeCheckPrintModal() {
+    setIsCheckPrintModal(false);
+  }
+
   function handleCancel() {
-    closeModal();
+    closeCheckRequestModal();
+    closeCheckPrintModal();
   }
 
   return (
@@ -36,17 +48,28 @@ const PlanWritingDetailList = () => {
       <Bottom>
         <BottomButton>이전 페이지</BottomButton>
         <div>
-          <BottomButton style={{ width: "152px" }} onClick={openModal}>
+          <BottomButton style={{ width: "152px" }} onClick={openCheckRequestModal}>
             시간표 요청하기
           </BottomButton>
-          {isModal && <DefaultModal open={isModal} close={closeModal} height={373}>
-          <p>시간표 변경을 요청하시겠습니까?</p>
-          <div>
+          {isCheckRequestModal && <DefaultModal open={isCheckRequestModal} close={closeCheckRequestModal} height={373}>
+          <MainText>{ModalTextList.requestText.main_text}</MainText>
+          <SubText>{ModalTextList.requestText.sub_text}</SubText>
+          <ButtonWrapper>
             <Button onClick={handleCancel}>취소</Button>
             <Button>요청</Button>
-          </div>
+          </ButtonWrapper>
           </DefaultModal>}
-          <BottomButton onClick={openModal}>PDF 출력</BottomButton>
+          <BottomButton onClick={openCheckPrintModal}>
+            PDF 출력
+          </BottomButton>
+          {isCheckPrintModal && <DefaultModal open={isCheckPrintModal} close={closeCheckPrintModal} height={373}>
+            <MainText>{ModalTextList.printText.main_text}</MainText>
+            <SubText>{ModalTextList.printText.sub_text}</SubText>
+            <ButtonWrapper>
+              <Button onClick={handleCancel}>취소</Button>
+              <Button>출력</Button>
+            </ButtonWrapper>
+          </DefaultModal> }
         </div>
       </Bottom>
     </Container>
@@ -65,6 +88,28 @@ const TitleText = styled.div`
   width: 130px;
 `;
 
+const MainText = styled.div`
+  justify-content: center;
+  margin-top: 40px;
+  font: ${({ theme }) => theme.font.SemiBold32};
+  color: ${({ theme }) => theme.colors.Black};
+`;
+
+const SubText = styled.div`
+  justify-content: center;
+  white-space: pre-wrap;
+  padding: 0 125px;
+  text-align: center;
+  font: ${({ theme }) => theme.font.Regular24};
+  color: ${({ theme }) => theme.colors.Gray700};
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+`;
+
 const MainListHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -79,7 +124,7 @@ const MainListHeader = styled.div`
 const MainList = styled.div`
   display: flex;
   justify-content: space-between;
-  
+  align-items: center;
   height: 74px;
   padding: 22px 146px;
   background-color: ${({ theme }) => theme.colors.White};
