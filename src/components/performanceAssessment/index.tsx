@@ -3,7 +3,7 @@ import { List } from "../contance";
 import PerformanceList from "./performancelist";
 import {useState } from "react";
 import Dropdown from "../common/dropDown";
-import { gradeDropDownItem, classDropDownItem } from "../../constant/performance";
+import { gradeDropDownItem, classDropDownItem } from "../../constant/dropDownType";
 import Calendar from "../common/calender";
 import DefaultModal from "../common/modal";
 

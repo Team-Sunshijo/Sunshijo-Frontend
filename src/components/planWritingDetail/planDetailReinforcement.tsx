@@ -5,7 +5,7 @@ import {useState } from "react";
 import DefaultModal from "../common/modal";
 import Dropdown from "../common/dropDown";
 import Calendar from "../common/calender";
-import { gradeDropDownItem, classDropDownItem,timeDropDownItem, subjectDropDownItem} from "../../constant/performance";
+import { gradeDropDownItem, classDropDownItem,timeDropDownItem, subjectDropDownItem} from "../../constant/dropDownType";
 
 const PlanDetailReinforcement = () => {
 
