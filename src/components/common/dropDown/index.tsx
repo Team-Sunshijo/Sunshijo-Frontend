@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import { DropIcon } from "../../../assets/icons";
@@ -6,9 +5,10 @@ import { DropIcon } from "../../../assets/icons";
 interface DropdownProps {
   options: { initialState: string; option: string[] };
   width: number;
+  onClick: (option: string) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, width }) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, width, onClick }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [selectItem, setSelectItem] = useState<string>(options.initialState);
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +16,11 @@ const Dropdown: React.FC<DropdownProps> = ({ options, width }) => {
   const handleOptionClick = (option: string) => {
     setSelectItem(option);
     setIsOpen(false);
+    onClick(option);
   };
 
   return (
-    <DropContainer width={width}>
+    <DropContainer width={width} >
       <input
         type="button"
         onClick={() => setIsOpen(!isOpen)}

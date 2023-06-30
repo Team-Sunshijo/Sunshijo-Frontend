@@ -9,6 +9,7 @@ import DefaultModal from "../common/modal";
 
 const Performance = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
+  const [selectedOption, setSelectedOption]=useState("");
 
   function openModal() {
     setIsModal(true);
@@ -21,6 +22,10 @@ const Performance = () => {
     closeModal();
   }
 
+  const handleDropdownOption = (option: string) => {
+    setSelectedOption(option);
+   };
+
   return (
     <Container>
       <Header>
@@ -30,8 +35,8 @@ const Performance = () => {
         <p>수행평가 등록</p>
         <Calendar/>
         <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113} />
-          <Dropdown options={classDropDownItem} width={113} />
+          <Dropdown options={gradeDropDownItem} width={113}onClick={handleDropdownOption} />
+          <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption}/>
         </DropContainer>
         <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
         <ButtonWrapper>

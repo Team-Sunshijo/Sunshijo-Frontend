@@ -3,14 +3,16 @@ import Dropdown from "../common/dropDown";
 import { PlanDropDownItem,StateDropDownItem } from "../../constant/timetableManagement";
 
 const TimetableHeader = () => {
+
+  
   return (
     <>
       <Header>
         <p>결 보강 관리 </p>
         <StateText>요청중</StateText>
         <DropContainer>
-          <Dropdown options={PlanDropDownItem} width={146} />
-          <Dropdown options={StateDropDownItem} width={146} />
+          {/* <Dropdown options={PlanDropDownItem} width={146} />
+          <Dropdown options={StateDropDownItem} width={146} /> */}
         </DropContainer>
         <ButtonContainer>
           <TimetableButton>요청 받은 시간표</TimetableButton>
