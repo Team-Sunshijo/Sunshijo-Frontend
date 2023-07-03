@@ -51,7 +51,6 @@ const ModalBox = styled.div<{ height: number }>`
     color: ${({ theme }) => theme.colors.Black};
     font: ${({ theme }) => theme.font.SemiBold32};
     display: flex;
-    justify-content: center;
   }
   > div {
     display: flex;
