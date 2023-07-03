@@ -55,7 +55,7 @@ const PlanDetailClassChange = () => {
             close={closeAddModal}
           >
             <p style={{ marginBottom: "25px" }}>수업교체 계획서 추가</p>
-            <Calendar />
+            <div><Calendar /></div>
             <DropContainer>
               <Dropdown options={gradeDropDownItem} width={113} />
               <Dropdown options={classDropDownItem} width={113} />
