@@ -95,9 +95,17 @@ const PlanDetailReinforcement = () => {
 
 const Div = styled.div`
   display: flex;
+    margin-bottom: 15px;
+    gap: 45px;
+`;
+
+const Div=styled.div`
+  display: flex;
   justify-content: center;
   gap: 45px;
+  
 `;
+
 const ListHeader = styled.div`
   display: flex;
   margin-top: 50px;
@@ -164,6 +172,21 @@ const Button = styled.button`
   }
 `;
 
+const Button=styled.button`
+   margin-top: 32px;
+    width: 109px;
+    height: 48px;
+    background-color: ${({ theme }) => theme.colors.Main};
+    border-radius: 8px;
+    border: none;
+    gap: 20px;
+    color: ${({ theme }) => theme.colors.White};
+    font: ${({ theme }) => theme.font.SemiBold16};
+    :hover {
+      background-color: ${({ theme }) => theme.colors.Main800}
+    };
+`
+
 const PerformanceInput = styled.textarea`
   ::-webkit-scrollbar {
     width: 10px;
@@ -200,8 +223,7 @@ const PerformanceInput = styled.textarea`
     top: 20px;
   }
 `;
-
-const DropContainer = styled.div`
+const DropContainer=styled.div`
   display: flex;
   gap: 30px;
   margin-top: 25px;
