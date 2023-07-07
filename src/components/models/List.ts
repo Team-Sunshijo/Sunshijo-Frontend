@@ -1,3 +1,5 @@
+import { text } from "stream/consumers";
+
 export interface ListProps {
       date: string;
       grade_class: string;
@@ -40,4 +42,11 @@ export interface ClassChangeListProps {
       change_grade_class: string;
       replace_subject: string;
       charge_teacher: string;
+}
+
+export interface modalTextListProps {
+      [requestText: string]: {
+      main_text: string,
+      sub_text: string,
+      }
 }
