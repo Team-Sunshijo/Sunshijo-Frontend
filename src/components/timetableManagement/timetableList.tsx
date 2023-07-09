@@ -30,16 +30,22 @@ const List = ({
         <p>{subject}</p>
         <p>{reason}</p>
         <p>{teacher}</p>
-        <StateText>{state}</StateText>
+        <StateText state={state}>{state}</StateText>
       </ListBox>
     </>
   );
 };
 
-const StateText=styled.div`
-    color: ${({theme})=>theme.colors.Main};
-    font: ${({theme})=>theme.font.Regular24};
-`
+const StateText = styled.div<{ state: string }>`
+  // color: ${theme.colors.Main};
+  color: ${(props) =>
+    props.state === "요청중"
+      ? theme.colors.Main
+      : props.state === "수락"
+      ? theme.colors.Green100
+      : theme.colors.Red};
+  font: ${({ theme }) => theme.font.Regular24};
+`;
 
 const ListBox = styled.div<{ isChecked: boolean }>`
   align-items: center;

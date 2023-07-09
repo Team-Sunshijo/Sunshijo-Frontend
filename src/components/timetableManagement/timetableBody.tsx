@@ -2,15 +2,20 @@ import styled from "styled-components";
 import List from "./timetableList";
 import { TimetableList } from "../contance";
 
-const TimetableBody = () => {
+type Props = {
+  plan: string;
+  setPlan: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const TimetableBody = ({ plan, setPlan }: Props) => {
   return (
     <>
       <TitleRow>
         <p>체크</p>
         <p>등록날짜</p>
         <p>학년-반</p>
-        <p>결강과목</p>
-        <p>사유</p>
+        <p>{plan === "결보강" ? "결강" : "교체"}과목</p>
+        {plan === "결보강" && <p>사유</p>}
         <p>요청교사</p>
         <p>상태</p>
       </TitleRow>
@@ -36,7 +41,7 @@ const TitleRow = styled.div`
   justify-content: space-between;
   padding: 20px 47px;
   margin-top: 15px;
- 
+
   p {
     font: ${({ theme }) => theme.font.SemiBold24};
     color: ${({ theme }) => theme.colors.Gray900};
