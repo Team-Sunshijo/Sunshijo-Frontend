@@ -11,6 +11,7 @@ const PlanDetailReinforcement = () => {
 
   const [isModifyModalOpen, setIsModifyModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [selectedOption, setSelectedOption]=useState("");
 
   function openModifyModal() {
     setIsModifyModalOpen(true);
@@ -32,6 +33,10 @@ const PlanDetailReinforcement = () => {
     closeModifyModal();
     closeAddModal();
   }
+
+  const handleDropdownOption = (option: string) => {
+    setSelectedOption(option);
+   };
   return(
     <>
       <ListHeader>
@@ -40,11 +45,11 @@ const PlanDetailReinforcement = () => {
           <ModifyButton onClick={openModifyModal}>계획서 수정</ModifyButton>
           {isModifyModalOpen && <DefaultModal height={590} open={isModifyModalOpen} close={closeModifyModal}  >
           <p>결보강 계획서 수정</p>
-    <div><Calendar/><Dropdown options={subjectDropDownItem} width={130}/></div>
+    <div><Calendar/><Dropdown options={subjectDropDownItem} width={130} onClick={handleDropdownOption}/></div>
   <DropContainer>
-    <Dropdown options={gradeDropDownItem} width={113} />
-    <Dropdown options={classDropDownItem} width={113} />
-    <Dropdown options={timeDropDownItem} width={113} />
+    <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption} />
+    <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption}/>
+    <Dropdown options={timeDropDownItem} width={113} onClick={handleDropdownOption}/>
   </DropContainer>
   <PerformanceInput placeholder="보강 계획을 입력해주세요." />
   <Div>
@@ -55,11 +60,11 @@ const PlanDetailReinforcement = () => {
           <AddButton onClick={openAddModal}>계획서 추가</AddButton>
           {isAddModalOpen && <DefaultModal height={590} open={isAddModalOpen} close={closeAddModal}  >
           <p>결보강 계획서 추가 </p>
-          <div><Calendar/><Dropdown options={subjectDropDownItem} width={130}/></div>
+          <div><Calendar/><Dropdown options={subjectDropDownItem} width={130} onClick={handleDropdownOption}/></div>
         <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113} />
-          <Dropdown options={classDropDownItem} width={113} />
-          <Dropdown options={timeDropDownItem} width={113} />
+          <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption}/>
+          <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption} />
+          <Dropdown options={timeDropDownItem} width={113} onClick={handleDropdownOption} />
         </DropContainer>
         <PerformanceInput placeholder="보강 계획을 입력해주세요." />
         <Div>

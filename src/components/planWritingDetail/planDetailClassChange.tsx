@@ -15,7 +15,7 @@ import DefaultModal from "../common/modal";
 const PlanDetailClassChange = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isAddNextModalOpen, setIsAddNextModalOpen] = useState(false);
-
+  const [selectedOption, setSelectedOption]=useState("");
   function openAddModal() {
     setIsAddModalOpen(true);
   }
@@ -43,6 +43,9 @@ const PlanDetailClassChange = () => {
     setIsAddNextModalOpen(false);
   }
 
+  const handleDropdownOption = (option: string) => {
+    setSelectedOption(option);
+   };
   return (
     <>
       <ListHeader>
@@ -57,10 +60,10 @@ const PlanDetailClassChange = () => {
             <p style={{ marginBottom: "25px" }}>수업교체 계획서 추가</p>
             <div><Calendar /></div>
             <DropContainer>
-              <Dropdown options={gradeDropDownItem} width={113} />
-              <Dropdown options={classDropDownItem} width={113} />
-              <Dropdown options={timeDropDownItem} width={113} />
-              <Dropdown options={subjectDropDownItem} width={113} />
+              <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption} />
+              <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption} />
+              <Dropdown options={timeDropDownItem} width={113} onClick={handleCancel} />
+              <Dropdown options={subjectDropDownItem} width={113} onClick={handleDropdownOption} />
             </DropContainer>
             <Div>
               <Button onClick={handleCancel}>취소</Button>
@@ -77,13 +80,13 @@ const PlanDetailClassChange = () => {
                   <p style={{ marginBottom: "25px" }}>수업교체 계획서 추가</p>
                   <div>
                     <Calendar />{" "}
-                    <Dropdown options={subjectDropDownItem} width={113} />
+                    <Dropdown options={subjectDropDownItem} width={113} onClick={handleDropdownOption}/>
                   </div>
                   <DropContainer>
-                    <Dropdown options={gradeDropDownItem} width={113} />
-                    <Dropdown options={classDropDownItem} width={113} />
-                    <Dropdown options={timeDropDownItem} width={113} />
-                    <Dropdown options={subjectDropDownItem} width={113} />
+                    <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption} />
+                    <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption} />
+                    <Dropdown options={timeDropDownItem} width={113} onClick={handleDropdownOption} />
+                    <Dropdown options={subjectDropDownItem} width={113} onClick={handleDropdownOption} />
                   </DropContainer>
                   <Div>
                     <Button onClick={handleBefore}>이전</Button>
