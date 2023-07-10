@@ -32,12 +32,12 @@ const TimetableHeader = () => {
 };
 
 const Header = styled.div`
+margin-top: 30px;
   display: flex;
   > p {
     font: ${({ theme }) => theme.font.SemiBold32};
     width: 174px;
     height: 30px;
-    margin-top: 151px;
     color: ${({ theme }) => theme.colors.Gray900};
   }
 `;
@@ -47,20 +47,18 @@ const StateText = styled.div`
   color: ${({ theme }) => theme.colors.Main};
   width: 63px;
   height: 30px;
-  margin-top: 157px;
+ margin-top: 10px;
 `;
 
 const DropContainer = styled.div`
   display: flex;
   gap: 40px;
-  margin-top: 146px;
   margin-left: 38px;
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   gap: 45px;
-  margin-top: 143px;
   width: 656px;
   margin-left: auto;
 `;

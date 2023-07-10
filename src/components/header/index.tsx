@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { Alram } from "../../assets/icons";
 import DefaultModal from "../common/modal";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Header = () => {
+
+  const navigate = useNavigate();
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function openModal() {
@@ -21,17 +25,11 @@ const Header = () => {
 
   return (
     <HeaderArea>
-      <Logo>로고</Logo>
+      <Logo  onClick={()=>{navigate("/main")}}>로고</Logo>
       <Pages>
-        <Link to="planWritingDetail">
-          <p>시간표 변경</p>
-        </Link>
-        <Link to="timetableManagement">
-          <p>시간표 관리</p>
-        </Link>
-        <Link to="performance">
-          <p>수행평가 등록</p>
-        </Link>
+      <p onClick={()=>{navigate("/planWriting")}}>시간표 변경</p>
+        <p onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</p>
+        <p onClick={()=>{navigate("/performance")}}>수행평가 등록</p>
         <img src={Alram} />
         <AcountButton onClick={openModal}>로그아웃</AcountButton>
         {isModalOpen && (
@@ -39,7 +37,7 @@ const Header = () => {
             <MainTitle>로그아웃 하시겠습니까?</MainTitle>
             <Div>
               <Button onClick={handleCancel}>취소</Button>
-              <Button>로그아웃</Button>
+              <Button onClick={()=>{navigate("/login")}}>로그아웃</Button>
             </Div>
           </DefaultModal>
         )}

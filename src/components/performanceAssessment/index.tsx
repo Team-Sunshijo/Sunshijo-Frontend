@@ -74,7 +74,7 @@ const MainTitle=styled.div`
     width: 174px;
     height: 30px;
     color: ${({ theme }) => theme.colors.Gray900};
-    margin-top: 151px;
+  
 `
 const Button=styled.button`
    margin-top: 32px;
@@ -134,7 +134,8 @@ const DropContainer=styled.div`
  margin-right: auto;
 `
 const Container = styled.div`
-  padding: 0 165px;
+  padding: 70px 165px;
+  margin-top: 30px;
 `;
 const Header = styled.div`
   p {
@@ -157,7 +158,7 @@ const PerformanceAddButton  = styled.button`
   border-radius: 8px;
   font: ${({ theme }) => theme.font.SemiBold16};
   color: ${({ theme }) => theme.colors.White};
-  margin-top: 143px;
+ 
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
   }
