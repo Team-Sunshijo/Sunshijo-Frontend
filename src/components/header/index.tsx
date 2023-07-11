@@ -37,7 +37,7 @@ const Header = () => {
             <MainTitle>로그아웃 하시겠습니까?</MainTitle>
             <Div>
               <Button onClick={handleCancel}>취소</Button>
-              <Button onClick={()=>{navigate("/login")}}>로그아웃</Button>
+              <Button onClick={() => {navigate("/login"); handleCancel();}}>로그아웃</Button>
             </Div>
           </DefaultModal>
         )}
