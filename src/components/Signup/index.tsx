@@ -1,84 +1,88 @@
-import styled from "styled-components";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAdminSignup } from "../../queries";
+import * as _ from "./style";
 
 const Signup = () => {
+  const SignupValue = {
+    accountId: "",
+    password: "",
+    name: "",
+    signUpCode: "",
+  };
+
+  const [inputValues, setInputValues] = useState(SignupValue);
+  const { accountId, password, name, signUpCode } = inputValues;
+  const adminSignupMutaion = useAdminSignup();
+  const navigate = useNavigate();
+
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name: inputName } = event.target;
+    setInputValues({ ...inputValues, [inputName]: value });
+  };
+
+  const onSubmitSuccess = () => {
+    alert("회원가입에 성공하셨습니다.");
+    navigate("/login");
+  };
+
+  const onSubmitError = () => {
+    alert("회원가입에 실패하셨습니다.");
+  };
+
+  const submitSignup = () => {
+    adminSignupMutaion.mutate(
+      {
+        account_id: accountId,
+        password: password,
+        name: name,
+        sign_up_code: signUpCode,
+      },
+      {
+        onSuccess: onSubmitSuccess,
+        onError: onSubmitError,
+      }
+    );
+  };
+
   return (
-    <Content>
-      <TitleText>회원가입</TitleText>
-      <ContentText>아이디</ContentText>
-      <Input placeholder="아이디를 입력해주세요." />
-      <ContentText>비밀번호</ContentText>
-      <Input placeholder="비밀번호를 입력해주세요." />
-      <ContentText>이름</ContentText>
-      <Input placeholder="이름을 입력해주세요." />
-      <ContentText>인증코드</ContentText>
-      <Input placeholder="인증코드를 입력해주세요." />
-      <SignupBtn>회원가입</SignupBtn>
-      <CheckWrapper>
-        <CheckText>이미 계정이 있으신가요? </CheckText>
-        <LoginText>로그인 하러가기</LoginText>
-      </CheckWrapper>
-    </Content>
+    <_.Content>
+      <_.TitleText>회원가입</_.TitleText>
+      <_.ContentText>아이디</_.ContentText>
+      <_.Input
+        placeholder="아이디를 입력해주세요."
+        name="accountId"
+        value={accountId}
+        onChange={onChangeInput}
+      />
+      <_.ContentText>비밀번호</_.ContentText>
+      <_.Input
+        placeholder="비밀번호를 입력해주세요."
+        name="password"
+        value={password}
+        onChange={onChangeInput}
+      />
+      <_.ContentText>이름</_.ContentText>
+      <_.Input
+        placeholder="이름을 입력해주세요."
+        name="name"
+        value={name}
+        onChange={onChangeInput}
+      />
+      <_.ContentText>인증코드</_.ContentText>
+      <_.Input
+        placeholder="인증코드를 입력해주세요."
+        name="signUpCode"
+        value={signUpCode}
+        onChange={onChangeInput}
+      />
+      <_.SignupBtn onClick={submitSignup}>회원가입</_.SignupBtn>
+      <_.CheckWrapper>
+        <_.CheckText>이미 계정이 있으신가요? </_.CheckText>
+        <_.LoginText>로그인 하러가기</_.LoginText>
+      </_.CheckWrapper>
+    </_.Content>
   );
 };
-
-const Content = styled.div`
-  width: 509px;
-  padding: 35px 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px 0;
-`;
-
-const TitleText = styled.div`
-  width: 85px;
-  height: 30px;
-  font: ${({ theme }) => theme.font.SemiBold24};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.Main};
-`;
-
-const ContentText = styled.div`
-  height: 15px;
-  font: ${({ theme }) => theme.font.SemiBold16};
-`;
-
-export const Input = styled.input`
-  font: ${({ theme }) => theme.font.Regular14};
-  width: 288px;
-  height: 53px;
-  border: none;
-  border-radius: 6px;
-  background: ${({ theme }) => theme.colors.White};
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
-  padding-left: 19px;
-  outline: none;
-`;
-
-const SignupBtn = styled.button`
-  width: 288px;
-  height: 41px;
-  border: none;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.Main};
-  margin-top: 12px;
-  color: ${({ theme }) => theme.colors.White};
-  font: ${({ theme }) => theme.font.SemiBold16};
-  cursor: pointer;
-`;
-
-const CheckWrapper = styled.div`
-  width: 200px;
-  margin: 0 auto;
-`;
-
-const CheckText = styled.span`
-  font: ${({ theme }) => theme.font.Regular12};
-`;
-
-const LoginText = styled.span`
-  font: ${({ theme }) => theme.font.Medium12};
-  color: ${({ theme }) => theme.colors.Main};
-  cursor: pointer;
-  margin-left: 2px;
-`;
 
 export default Signup;
