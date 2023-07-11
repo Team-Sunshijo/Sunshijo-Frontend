@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import { List } from "../contance";
+import { Notice } from "../contance";
 import PerformanceList from "./performancelist";
-import {useState } from "react";
+import { useState } from "react";
 import Dropdown from "../common/dropDown";
-import { gradeDropDownItem, classDropDownItem } from "../../constant/dropDownType";
+import {
+  gradeDropDownItem,
+  classDropDownItem,
+} from "../../constant/dropDownType";
 import Calendar from "../common/calender";
 import DefaultModal from "../common/modal";
 
 const Performance = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption]=useState("");
+  const [isAdd, setIsAdd] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
 
   function openModal() {
     setIsModal(true);
@@ -21,29 +26,45 @@ const Performance = () => {
   function handleCancel() {
     closeModal();
   }
+  function handleSubmit() {
+    setIsAdd(true);
+    closeModal();
+  }
 
   const handleDropdownOption = (option: string) => {
     setSelectedOption(option);
-   };
+  };
 
   return (
     <Container>
       <Header>
         <MainTitle>수행평가 등록</MainTitle>
-        <PerformanceAddButton onClick={openModal}>수행평가 등록</PerformanceAddButton>
-        {isModal && <DefaultModal height={590} open={isModal} close={closeModal}  >
-        <p>수행평가 등록</p>
-        <Calendar/>
-        <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113}onClick={handleDropdownOption} />
-          <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption}/>
-        </DropContainer>
-        <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
-        <ButtonWrapper>
-          <Button onClick={handleCancel}>취소</Button>
-          <Button>등록</Button>
-        </ButtonWrapper>
-        </DefaultModal> }
+        <PerformanceAddButton onClick={openModal}>
+          수행평가 등록
+        </PerformanceAddButton>
+        {isModal && (
+          <DefaultModal height={590} open={isModal} close={closeModal}>
+            <p>수행평가 등록</p>
+            <Calendar />
+            <DropContainer>
+              <Dropdown
+                options={gradeDropDownItem}
+                width={113}
+                onClick={handleDropdownOption}
+              />
+              <Dropdown
+                options={classDropDownItem}
+                width={113}
+                onClick={handleDropdownOption}
+              />
+            </DropContainer>
+            <PerformanceInput placeholder="수행평가 내용을 입력해주세요." />
+            <ButtonWrapper>
+              <Button onClick={handleCancel}>취소</Button>
+              <Button onClick={handleSubmit}>등록</Button>
+            </ButtonWrapper>
+          </DefaultModal>
+        )}
       </Header>
       <TitleRow>
         <p>날짜(요일)</p>
@@ -51,45 +72,45 @@ const Performance = () => {
         <p>과목</p>
         <p>담당교사</p>
       </TitleRow>
-      {List.map((item) => (
-        <PerformanceList
-          date={item.date}
-          grade_class={item.grade_class}
-          teacher={item.teacher}
-          subject={item.subject}
-        />
-      ))}
+      {isAdd &&
+        Notice.map((item) => (
+          <PerformanceList
+            date={item.date}
+            grade_class={item.grade_class}
+            teacher={item.teacher}
+            subject={item.subject}
+          />
+        ))}
     </Container>
   );
 };
 
-const ButtonWrapper=styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 45px;
-`
+`;
 
-const MainTitle=styled.div`
-    font: ${({ theme }) => theme.font.SemiBold32};
-    width: 174px;
-    height: 30px;
-    color: ${({ theme }) => theme.colors.Gray900};
-    margin-top: 151px;
-`
-const Button=styled.button`
-   margin-top: 32px;
-    width: 109px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.Main};
-    border-radius: 8px;
-    border: none;
-    gap: 20px;
-    color: ${({ theme }) => theme.colors.White};
-    font: ${({ theme }) => theme.font.SemiBold16};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.Main800}
-    };
-`
+const MainTitle = styled.div`
+  font: ${({ theme }) => theme.font.SemiBold32};
+  width: 174px;
+  height: 30px;
+  color: ${({ theme }) => theme.colors.Gray900};
+`;
+const Button = styled.button`
+  margin-top: 32px;
+  width: 109px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.Main};
+  border-radius: 8px;
+  border: none;
+  gap: 20px;
+  color: ${({ theme }) => theme.colors.White};
+  font: ${({ theme }) => theme.font.SemiBold16};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
+  }
+`;
 
 const PerformanceInput = styled.textarea`
   ::-webkit-scrollbar {
@@ -127,14 +148,15 @@ const PerformanceInput = styled.textarea`
     top: 20px;
   }
 `;
-const DropContainer=styled.div`
+const DropContainer = styled.div`
   display: flex;
   gap: 30px;
- margin-top: 25px;
- margin-right: auto;
-`
+  margin-top: 25px;
+  margin-right: auto;
+`;
 const Container = styled.div`
-  padding: 0 165px;
+  padding: 70px 165px;
+  margin-top: 30px;
 `;
 const Header = styled.div`
   p {
@@ -147,17 +169,17 @@ const Header = styled.div`
   justify-content: space-between;
   display: flex;
 `;
-const PerformanceAddButton  = styled.button`
+const PerformanceAddButton = styled.button`
   width: 136px;
   height: 48px;
   left: 1619px;
   padding: 11px 24px;
   border: none;
-  background-color:${({ theme }) => theme.colors.Main};
+  background-color: ${({ theme }) => theme.colors.Main};
   border-radius: 8px;
   font: ${({ theme }) => theme.font.SemiBold16};
   color: ${({ theme }) => theme.colors.White};
-  margin-top: 143px;
+
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
   }

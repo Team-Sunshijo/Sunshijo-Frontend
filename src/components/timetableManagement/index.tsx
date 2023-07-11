@@ -21,6 +21,6 @@ const TimetableManagement = () => {
 };
 
 const Container = styled.div`
-  padding: 0 165px;
+   padding: 70px 165px;
 `;
 export default TimetableManagement;

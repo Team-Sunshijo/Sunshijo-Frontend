@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import { PlanWList } from "../contance/index";
 import PlanWritingList from "./planWritingList";
+import { useNavigate } from "react-router-dom";
 
 const PlanWriting = () => {
+
+  const navigate = useNavigate();
+  
   return (
     <Container>
       <Header>
         <p>계획서 작성</p>
         <div>
           <ModifyButton>계획서 수정</ModifyButton>
-          <AddButton>계획서 추가</AddButton>
+          <AddButton onClick={()=>{navigate("/planWritingDetail")}}>계획서 추가</AddButton>
         </div>
       </Header>
       <TitleList>
@@ -32,6 +36,7 @@ const PlanWriting = () => {
 
 const Container = styled.div`
   padding: 70px 165px;
+  margin-top: 30px;
 `;
 
 const Header = styled.div`
@@ -40,7 +45,8 @@ const Header = styled.div`
   justify-content: space-between;
   p {
     font: ${({ theme }) => theme.font.SemiBold32};
-    line-height: 30px;
+  }
+  div {
   }
 `;
 
@@ -62,10 +68,9 @@ const ModifyButton = styled.button`
 `;
 
 const AddButton = styled.button`
-  margin-left:45px;
+  margin-left: 45px;
   width: 122px;
   height: 48px;
-  top: 143px;
   background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
@@ -89,7 +94,7 @@ const TitleList = styled.div`
   p {
     font: ${({ theme }) => theme.font.SemiBold24};
     width: 125px;
-  };
+  }
 `;
 
 export default PlanWriting;

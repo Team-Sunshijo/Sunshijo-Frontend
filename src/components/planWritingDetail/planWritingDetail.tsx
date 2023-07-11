@@ -5,11 +5,14 @@ import { useState } from "react";
 import DefaultModal from "../common/modal";
 import Calendar from "../common/calender";
 import { ModalTextList } from "../contance/modalList";
+import { useNavigate } from "react-router-dom";
 
 const PlanWritingDetailList = () => {
-  const [isCheckRequestModal, setIsCheckRequestModal] = useState<boolean>(false);
+  const [isCheckRequestModal, setIsCheckRequestModal] =
+    useState<boolean>(false);
   const [isCheckPrintModal, setIsCheckPrintModal] = useState<boolean>(false);
 
+  const navigate = useNavigate();
   function openCheckRequestModal() {
     setIsCheckRequestModal(true);
   }
@@ -46,30 +49,43 @@ const PlanWritingDetailList = () => {
       <PlanDetailReinforcement />
       <PlanDetailClassChange />
       <Bottom>
-        <BottomButton>이전 페이지</BottomButton>
+        <BottomButton onClick={()=>{navigate("/planWriting")}}>이전 페이지</BottomButton>
         <div>
-          <BottomButton style={{ width: "152px" }} onClick={openCheckRequestModal}>
+          <BottomButton
+            style={{ width: "152px" }}
+            onClick={openCheckRequestModal}
+          >
             시간표 요청하기
           </BottomButton>
-          {isCheckRequestModal && <DefaultModal open={isCheckRequestModal} close={closeCheckRequestModal} height={373}>
-          <MainText>{ModalTextList.requestText.main_text}</MainText>
-          <SubText>{ModalTextList.requestText.sub_text}</SubText>
-          <ButtonWrapper>
-            <Button onClick={handleCancel}>취소</Button>
-            <Button>요청</Button>
-          </ButtonWrapper>
-          </DefaultModal>}
-          <BottomButton onClick={openCheckPrintModal}>
-            PDF 출력
-          </BottomButton>
-          {isCheckPrintModal && <DefaultModal open={isCheckPrintModal} close={closeCheckPrintModal} height={373}>
-            <MainText>{ModalTextList.printText.main_text}</MainText>
-            <SubText>{ModalTextList.printText.sub_text}</SubText>
-            <ButtonWrapper>
-              <Button onClick={handleCancel}>취소</Button>
-              <Button>출력</Button>
-            </ButtonWrapper>
-          </DefaultModal> }
+          {isCheckRequestModal && (
+            <DefaultModal
+              open={isCheckRequestModal}
+              close={closeCheckRequestModal}
+              height={373}
+            >
+              <MainText>{ModalTextList.requestText.main_text}</MainText>
+              <SubText>{ModalTextList.requestText.sub_text}</SubText>
+              <ButtonWrapper>
+                <Button onClick={handleCancel}>취소</Button>
+                <Button>요청</Button>
+              </ButtonWrapper>
+            </DefaultModal>
+          )}
+          <BottomButton onClick={openCheckPrintModal}>PDF 출력</BottomButton>
+          {isCheckPrintModal && (
+            <DefaultModal
+              open={isCheckPrintModal}
+              close={closeCheckPrintModal}
+              height={373}
+            >
+              <MainText>{ModalTextList.printText.main_text}</MainText>
+              <SubText>{ModalTextList.printText.sub_text}</SubText>
+              <ButtonWrapper>
+                <Button onClick={handleCancel}>취소</Button>
+                <Button>출력</Button>
+              </ButtonWrapper>
+            </DefaultModal>
+          )}
         </div>
       </Bottom>
     </Container>
@@ -77,8 +93,8 @@ const PlanWritingDetailList = () => {
 };
 
 const Container = styled.div`
-  padding: 81px 165px;
-  width: 100%;
+  padding: 70px 165px;
+  margin-top: 30px;
 `;
 
 const TitleText = styled.div`
@@ -178,7 +194,7 @@ const Button = styled.button`
   color: ${({ theme }) => theme.colors.White};
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
-    background-color: ${({ theme }) => theme.colors.Main800}
+    background-color: ${({ theme }) => theme.colors.Main800};
   }
 `;
 
