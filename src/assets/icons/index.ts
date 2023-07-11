@@ -6,4 +6,4 @@ export { default as ExplainIcon } from "./ExplainIcon.svg";
 export { default as NextIcon } from "./NextIcon.svg";
 export { default as PreviousIcon } from "./PreviousIcon.svg";
 export { default as CalendarIcon } from "./CalendarIcon.svg";
-
+export { default as SunshijoLogo} from "./Sunshijo.svg"

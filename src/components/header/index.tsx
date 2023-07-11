@@ -3,7 +3,7 @@ import { Alram } from "../../assets/icons";
 import DefaultModal from "../common/modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { SunshijoLogo } from "../../assets/icons";
 
 const Header = () => {
 
@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <HeaderArea>
-      <Logo  onClick={()=>{navigate("/main")}}>로고</Logo>
+      <Logo src={SunshijoLogo}onClick={()=>{navigate("/main")}}/>
       <Pages>
       <p onClick={()=>{navigate("/planWriting")}}>시간표 변경</p>
         <p onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</p>
@@ -64,6 +64,7 @@ const Button = styled.button`
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -94,9 +95,10 @@ const Div = styled.div`
   gap: 45px;
 `;
 
-const Logo = styled.div`
+const Logo = styled.img`
   cursor: pointer;
-  /* 로고가 아직 없어서 div로 대체했습닌다.  */
+  width: 100px;
+ 
 `;
 
 const Pages = styled.div`
@@ -115,6 +117,7 @@ const AcountButton = styled.button`
   padding: 6px 12px;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

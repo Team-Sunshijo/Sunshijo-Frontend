@@ -43,46 +43,27 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   p {
     font: ${({ theme }) => theme.font.SemiBold32};
   }
-  div {
-  }
 `;
 
-const ModifyButton = styled.button`
-  justify-content: center;
-  padding: 11px 24px;
-  width: 122px;
-  height: 48px;
-  background-color: ${({ theme }) => theme.colors.Main};
-  border: none;
-  border-radius: 8px;
-
-  font: ${({ theme }) => theme.font.SemiBold16};
-  line-height: 160%;
-  color: ${({ theme }) => theme.colors.White};
-  :hover {
-    background-color: ${({ theme }) => theme.colors.Main800};
-  }
-`;
 
 const AddButton = styled.button`
-  margin-left: 45px;
   width: 122px;
   height: 48px;
   background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
-
   font: ${({ theme }) => theme.font.SemiBold16};
-  line-height: 160%;
+
   color: ${({ theme }) => theme.colors.White};
+
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -94,6 +75,7 @@ const TitleList = styled.div`
   justify-content: space-between;
   padding: 20px 47px;
   margin-top: 15px;
+
   p {
     font: ${({ theme }) => theme.font.SemiBold24};
     width: 125px;

@@ -131,6 +131,7 @@ const Button = styled.button`
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -178,6 +179,7 @@ const AddButton = styled.button`
   color: ${({ theme }) => theme.colors.White};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

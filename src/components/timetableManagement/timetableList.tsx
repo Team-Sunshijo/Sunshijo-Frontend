@@ -55,7 +55,6 @@ const ListBox = styled.div<{ isChecked: boolean }>`
     ${({ isChecked }) => (isChecked ? theme.colors.Main : theme.colors.Gray300)};
   margin-top: 25px;
   display: flex;
-  justify-content: space-between;
   padding: 0 47px;
 
   p {

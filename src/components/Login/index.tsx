@@ -62,6 +62,7 @@ const LoginBtn = styled.button`
   cursor: pointer;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

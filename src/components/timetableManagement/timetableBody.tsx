@@ -49,10 +49,8 @@ const TitleRow = styled.div`
   height: 70px;
   background-color: ${({ theme }) => theme.colors.Gray100};
   border-radius: 8px;
-  justify-content: space-between;
   padding: 20px 47px;
   margin-top: 15px;
-
   p {
     font: ${({ theme }) => theme.font.SemiBold24};
     color: ${({ theme }) => theme.colors.Gray900};
