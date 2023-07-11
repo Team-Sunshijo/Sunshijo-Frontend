@@ -7,65 +7,54 @@ const SchoolScheduleList = () => {
     <>
       <_.TitleText>
         <img src={PreviousIcon} />
-        2023년 5월
+        2023년 7월
         <img src={NextIcon} />
       </_.TitleText>
       <_.ScheduleBox>
         <_.SchoolSchedule>
           <_.Date>
-            29
-            <div>MON</div>
+            4<div>TUE</div>
           </_.Date>
-          <_.Event>체육대회</_.Event>
+          <_.Event>교내해커톤</_.Event>
         </_.SchoolSchedule>
         <_.SchoolSchedule>
           <_.Date>
-            30
-            <div>TUE</div>
+            5<div>WED</div>
           </_.Date>
-          <_.Event>전공동아리</_.Event>
+          <_.Event>교내해커톤</_.Event>
         </_.SchoolSchedule>
         <_.SchoolSchedule>
           <_.Date>
-            31
+            6<div>THU</div>
+          </_.Date>
+          <_.Event>교내해커톤</_.Event>
+        </_.SchoolSchedule>
+        <_.SchoolSchedule>
+          <_.Date>
+            8<div>SAT</div>
+          </_.Date>
+          <_.Event>입학설명회</_.Event>
+        </_.SchoolSchedule>
+        <_.SchoolSchedule>
+          <_.Date>
+            12
             <div>WED</div>
           </_.Date>
-          <_.Event>프로젝트반</_.Event>
+          <_.Event>대프콘</_.Event>
         </_.SchoolSchedule>
         <_.SchoolSchedule>
           <_.Date>
-            31
-            <div>WED</div>
+            13
+            <div>THU</div>
           </_.Date>
-          <_.Event>프로젝트반</_.Event>
+          <_.Event>청죽제</_.Event>
         </_.SchoolSchedule>
         <_.SchoolSchedule>
           <_.Date>
-            31
-            <div>WED</div>
+            14
+            <div>FRI</div>
           </_.Date>
-          <_.Event>프로젝트반</_.Event>
-        </_.SchoolSchedule>
-        <_.SchoolSchedule>
-          <_.Date>
-            31
-            <div>WED</div>
-          </_.Date>
-          <_.Event>프로젝트반</_.Event>
-        </_.SchoolSchedule>
-        <_.SchoolSchedule>
-          <_.Date>
-            31
-            <div>WED</div>
-          </_.Date>
-          <_.Event>프로젝트반</_.Event>
-        </_.SchoolSchedule>
-        <_.SchoolSchedule>
-          <_.Date>
-            31
-            <div>WED</div>
-          </_.Date>
-          <_.Event>프로젝트반</_.Event>
+          <_.Event>여름방학식</_.Event>
         </_.SchoolSchedule>
       </_.ScheduleBox>
     </>
