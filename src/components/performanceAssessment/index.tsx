@@ -7,6 +7,7 @@ import Dropdown from "../common/dropDown";
 import {
   gradeDropDownItem,
   classDropDownItem,
+  subjectDropDownItem,
 } from "../../constant/dropDownType";
 import Calendar from "../common/calender";
 import DefaultModal from "../common/modal";
@@ -54,6 +55,11 @@ const Performance = () => {
               />
               <Dropdown
                 options={classDropDownItem}
+                width={113}
+                onClick={handleDropdownOption}
+              />
+              <Dropdown
+                options={subjectDropDownItem}
                 width={113}
                 onClick={handleDropdownOption}
               />
