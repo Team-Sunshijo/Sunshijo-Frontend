@@ -4,17 +4,20 @@ import PlanWritingList from "./planWritingList";
 import { useNavigate } from "react-router-dom";
 
 const PlanWriting = () => {
-
   const navigate = useNavigate();
-  
+
   return (
     <Container>
       <Header>
         <p>계획서 작성</p>
-        <div>
-          <ModifyButton>계획서 수정</ModifyButton>
-          <AddButton onClick={()=>{navigate("/planWritingDetail")}}>계획서 추가</AddButton>
-        </div>
+
+        <AddButton
+          onClick={() => {
+            navigate("/planWritingDetail");
+          }}
+        >
+          계획서 추가
+        </AddButton>
       </Header>
       <TitleList>
         <p>날짜(요일)</p>
