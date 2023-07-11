@@ -38,6 +38,7 @@ const TimetableBody = ({ plan, stated }: Props) => {
           subject={item.subject}
           reason={plan === "수업교체" ? "" : item.reason}
           state={item.state}
+          plan={plan}
         />
       ))}
     </>

@@ -49,7 +49,13 @@ const PlanWritingDetailList = () => {
       <PlanDetailReinforcement />
       <PlanDetailClassChange />
       <Bottom>
-        <BottomButton onClick={()=>{navigate("/planWriting")}}>이전 페이지</BottomButton>
+        <BottomButton
+          onClick={() => {
+            navigate("/planWriting");
+          }}
+        >
+          이전 페이지
+        </BottomButton>
         <div>
           <BottomButton
             style={{ width: "152px" }}
@@ -106,7 +112,8 @@ const TitleText = styled.div`
 
 const MainText = styled.div`
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 50px;
+  margin-bottom: 40px;
   font: ${({ theme }) => theme.font.SemiBold32};
   color: ${({ theme }) => theme.colors.Black};
 `;
@@ -115,6 +122,7 @@ const SubText = styled.div`
   justify-content: center;
   white-space: pre-wrap;
   padding: 0 125px;
+  margin-bottom: 47px;
   text-align: center;
   font: ${({ theme }) => theme.font.Regular24};
   color: ${({ theme }) => theme.colors.Gray700};
@@ -160,7 +168,7 @@ const Input = styled.input`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  div {
+  > div {
     display: flex;
     gap: 45px;
   }
