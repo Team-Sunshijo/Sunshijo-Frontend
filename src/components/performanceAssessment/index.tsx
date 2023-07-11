@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { List } from "../contance";
 import { Notice } from "../contance";
 import PerformanceList from "./performancelist";
 import { useState } from "react";

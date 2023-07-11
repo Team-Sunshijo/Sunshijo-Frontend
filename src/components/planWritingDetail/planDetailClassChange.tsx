@@ -16,6 +16,9 @@ const PlanDetailClassChange = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isAddNextModalOpen, setIsAddNextModalOpen] = useState(false);
   const [selectedOption, setSelectedOption]=useState("");
+  
+
+
   function openAddModal() {
     setIsAddModalOpen(true);
   }
@@ -45,6 +48,8 @@ const PlanDetailClassChange = () => {
 
   const handleDropdownOption = (option: string) => {
     setSelectedOption(option);
+
+   
    };
   return (
     <>
@@ -90,7 +95,7 @@ const PlanDetailClassChange = () => {
                   </DropContainer>
                   <Div>
                     <Button onClick={handleBefore}>이전</Button>
-                    <Button>등록</Button>
+                    <Button onClick={handleCancel}>등록</Button>
                   </Div>
                 </DefaultModal>
               )}

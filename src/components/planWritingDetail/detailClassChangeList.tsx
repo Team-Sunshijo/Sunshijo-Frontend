@@ -88,6 +88,7 @@ const PlanClassChangeTeacherBox = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.Gray300};
   :hover {
     border-color: ${({ theme }) => theme.colors.Main};
+  }
 `;
 
 const MainTeacherText = styled.div`

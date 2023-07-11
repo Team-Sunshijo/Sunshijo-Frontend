@@ -82,7 +82,7 @@ const PlanDetailReinforcement = () => {
               <PerformanceInput placeholder="보강 계획을 입력해주세요." />
               <Div>
                 <Button onClick={handleCancel}>취소</Button>
-                <Button>등록</Button>
+                <Button  onClick={handleCancel}>등록</Button>
               </Div>
             </DefaultModal>
           )}

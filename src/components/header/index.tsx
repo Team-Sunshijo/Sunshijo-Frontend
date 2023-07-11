@@ -27,9 +27,9 @@ const Header = () => {
     <HeaderArea>
       <Logo src={SunshijoLogo}onClick={()=>{navigate("/main")}}/>
       <Pages>
-      <p onClick={()=>{navigate("/planWriting")}}>시간표 변경</p>
-        <p onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</p>
-        <p onClick={()=>{navigate("/performance")}}>수행평가 등록</p>
+      <NavItem onClick={()=>{navigate("/planWriting")}}>시간표 변경</NavItem>
+        <NavItem onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</NavItem>
+        <NavItem onClick={()=>{navigate("/performance")}}>수행평가 등록</NavItem>
         <img src={Alram} />
         <AcountButton onClick={openModal}>로그아웃</AcountButton>
         {isModalOpen && (
@@ -65,6 +65,27 @@ const Button = styled.button`
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
     transition: all 0.3s;
+  }
+`;
+
+const NavItem = styled.p`
+  position: relative;
+  cursor: pointer;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.Main};
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+  &:hover:after,
+  &.active:after {
+    transform: scaleX(1);
   }
 `;
 

@@ -10,7 +10,6 @@ const PlanWriting = () => {
     <Container>
       <Header>
         <p>계획서 작성</p>
-
         <AddButton
           onClick={() => {
             navigate("/planWritingDetail");
