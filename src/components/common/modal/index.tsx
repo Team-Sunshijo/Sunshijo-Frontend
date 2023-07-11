@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {  ReactElement } from "react";
+import { ReactElement } from "react";
 
 interface props {
   open: boolean;
@@ -9,13 +9,11 @@ interface props {
 }
 
 const DefaultModal = (props: props): ReactElement => {
-  const { children,height} = props;
+  const { children, height } = props;
 
   return (
     <ModalContainer>
-      <ModalBox height={height}>
-        {children}
-      </ModalBox>
+      <ModalBox height={height}>{children}</ModalBox>
     </ModalContainer>
   );
 };
@@ -36,7 +34,7 @@ const ModalContainer = styled.div`
 `;
 
 const ModalBox = styled.div<{ height: number }>`
-  height: ${({height }) => height}px;
+  height: ${({ height }) => height}px;
   width: 736px;
   cursor: auto;
   display: flex;
@@ -54,7 +52,6 @@ const ModalBox = styled.div<{ height: number }>`
   }
   > div {
     display: flex;
-    gap: 75px;
   }
 `;
 

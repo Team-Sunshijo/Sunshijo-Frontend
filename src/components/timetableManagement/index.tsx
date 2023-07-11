@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TimetableHeader from "./timetableHeader";
 import TimetableBody from "./timetableBody";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TimetableManagement = () => {
   const [plan, setPlan] = useState("결보강");
@@ -21,6 +21,6 @@ const TimetableManagement = () => {
 };
 
 const Container = styled.div`
-   padding: 70px 165px;
+  padding: 70px 165px;
 `;
 export default TimetableManagement;
