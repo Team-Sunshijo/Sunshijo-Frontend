@@ -1,24 +1,45 @@
 import styled from "styled-components";
 import Dropdown from "../common/dropDown";
-import { PlanDropDownItem,StateDropDownItem } from "../../constant/timetableManagement";
-import { useState } from "react";
+import {
+  PlanDropDownItem,
+  StateDropDownItem,
+} from "../../constant/timetableManagement";
+import theme from "../../utils/theme/theme";
 
-const TimetableHeader = () => {
+type Props = {
+  plan: string;
+  setPlan: React.Dispatch<React.SetStateAction<string>>;
+  stated: string;
+  setStated: React.Dispatch<React.SetStateAction<string>>;
+};
 
-  const [selectedOption, setSelectedOption]=useState("");
+const TimetableHeader = ({ plan, setPlan, stated, setStated }: Props) => {
+  const handleDropdownPlan = (option: string) => {
+    setPlan(option);
+  };
 
-  const handleDropdownOption = (option: string) => {
-    setSelectedOption(option);
-   };
+  const handleDropdownStat = (option: string) => {
+    setStated(option);
+  };
 
   return (
     <>
       <Header>
-        <p>결 보강 관리 </p>
-        <StateText>요청중</StateText>
+        <p>{plan === "결보강" ? "결 보강" : "수업교체"} 관리</p>
+        <StateText state={stated}>
+          {stated === "요청중" ? "요청중" : stated === "수락" ? "수락" : "거절"}
+        </StateText>
         <DropContainer>
-          <Dropdown options={PlanDropDownItem} width={146} onClick={handleDropdownOption} />
-          <Dropdown options={StateDropDownItem} width={146}onClick={handleDropdownOption} />
+          <Dropdown
+            options={PlanDropDownItem}
+            width={146}
+            onClick={handleDropdownPlan}
+          />
+          <Dropdown
+            options={StateDropDownItem}
+            width={146}
+            onClick={handleDropdownStat}
+          />
         </DropContainer>
         <ButtonContainer>
           <TimetableButton>요청 받은 시간표</TimetableButton>
@@ -42,9 +63,14 @@ const Header = styled.div`
   }
 `;
 
-const StateText = styled.div`
+const StateText = styled.div<{ state: string }>`
   font: ${({ theme }) => theme.font.SemiBold24};
-  color: ${({ theme }) => theme.colors.Main};
+  color: ${(props) =>
+    props.state === "요청중"
+      ? theme.colors.Main
+      : props.state === "수락"
+      ? theme.colors.Green100
+      : theme.colors.Red};
   width: 63px;
   height: 30px;
   margin-top: 157px;

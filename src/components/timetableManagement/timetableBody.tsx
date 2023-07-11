@@ -4,10 +4,20 @@ import { TimetableList } from "../contance";
 
 type Props = {
   plan: string;
-  setPlan: React.Dispatch<React.SetStateAction<string>>;
+  stated: string;
 };
 
-const TimetableBody = ({ plan, setPlan }: Props) => {
+const TimetableBody = ({ plan, stated }: Props) => {
+  let filteredList: typeof TimetableList = [];
+
+  if (stated === "요청중") {
+    filteredList = TimetableList.filter((item) => item.state === "요청중");
+  } else if (stated === "수락") {
+    filteredList = TimetableList.filter((item) => item.state === "수락");
+  } else if (stated === "거절") {
+    filteredList = TimetableList.filter((item) => item.state === "거절");
+  }
+
   return (
     <>
       <TitleRow>
@@ -19,13 +29,14 @@ const TimetableBody = ({ plan, setPlan }: Props) => {
         <p>요청교사</p>
         <p>상태</p>
       </TitleRow>
-      {TimetableList.map((item) => (
+      {filteredList.map((item, i) => (
         <List
+          key={i}
           date={item.date}
           grade_class={item.grade_class}
           teacher={item.teacher}
           subject={item.subject}
-          reason={item.reason}
+          reason={plan === "수업교체" ? "" : item.reason}
           state={item.state}
         />
       ))}
