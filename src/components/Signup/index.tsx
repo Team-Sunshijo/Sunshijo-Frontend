@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useAdminSignup } from "../../queries";
 import * as _ from "./style";
 
-
 const Signup = () => {
 
   const SignupValue = {
