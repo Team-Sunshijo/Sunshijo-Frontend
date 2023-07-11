@@ -201,5 +201,13 @@ export const ClassChangeList = [
     replace_subject: "한국사",
     charge_teacher: "김한비",
   },
-]
+];
 
+export const Notice = [
+  {
+    date: "2023-7-12",
+    grade_class: "2-4",
+    subject: "한국사",
+    teacher: "김철우",
+  },
+];
