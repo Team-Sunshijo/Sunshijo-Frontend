@@ -7,9 +7,11 @@ import TimetablePage from "./pages/TimetableManagementPage";
 import Header from "./components/header";
 
 function Router() {
+  const currentPath = window.location.pathname;
+  const shouldDisplayHeader = !["/login", "/signup"].includes(currentPath);
   return (
     <BrowserRouter>
-       <Header/>
+     {shouldDisplayHeader && <Header />}
       <Routes>
           <Route path="signup" element={<SignupPage />} />
           <Route path="login" element={<LoginPage />} />
