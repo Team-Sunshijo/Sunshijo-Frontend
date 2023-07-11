@@ -52,7 +52,7 @@ export const TimetableList = [
     subject: "한국사",
     teacher: "김한비",
     reason: "보강",
-    state: "요청중",
+    state: "수락",
   },
   {
     date: "2023-5-2",
@@ -60,7 +60,7 @@ export const TimetableList = [
     subject: "한국사",
     teacher: "김한비",
     reason: "보강",
-    state: "요청중",
+    state: "거절",
   },
   {
     date: "2023-5-2",
@@ -68,7 +68,7 @@ export const TimetableList = [
     subject: "한국사",
     teacher: "김한비",
     reason: "보강",
-    state: "요청중",
+    state: "거절",
   },
   {
     date: "2023-5-2",
@@ -76,7 +76,7 @@ export const TimetableList = [
     subject: "한국사",
     teacher: "김한비",
     reason: "보강",
-    state: "요청중",
+    state: "수락",
   },
   {
     date: "2023-5-2",
