@@ -1,6 +1,7 @@
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+   const navigate = useNavigate();
   return (
     <Content>
       <TitleText>로그인</TitleText>
@@ -11,7 +12,7 @@ const Login = () => {
       <LoginBtn>로그인</LoginBtn>
       <CheckWrapper>
         <CheckText>계정이 없으신가요? </CheckText>
-        <SignupText>회원가입하기</SignupText>
+        <SignupText onClick={()=>{navigate("/signup")}}>회원가입하기</SignupText>
       </CheckWrapper>
     </Content>
   );

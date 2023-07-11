@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAdminSignup } from "../../queries";
 import * as _ from "./style";
 
+
 const Signup = () => {
+
   const SignupValue = {
     accountId: "",
     password: "",
@@ -79,7 +81,7 @@ const Signup = () => {
       <_.SignupBtn onClick={submitSignup}>회원가입</_.SignupBtn>
       <_.CheckWrapper>
         <_.CheckText>이미 계정이 있으신가요? </_.CheckText>
-        <_.LoginText>로그인 하러가기</_.LoginText>
+        <_.LoginText  onClick={()=>{navigate("/login")}}>로그인 하러가기</_.LoginText>
       </_.CheckWrapper>
     </_.Content>
   );
