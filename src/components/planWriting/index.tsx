@@ -19,27 +19,31 @@ const PlanWriting = () => {
           계획서 추가
         </AddButton>
       </Header>
-      <TitleList>
-        <p>날짜(요일)</p>
-        <p>사유</p>
-        <p>요청교사</p>
-        <p>부담임</p>
-      </TitleList>
-      {PlanWList.map((item) => (
-        <PlanWritingList
-          date={item.date}
-          reason={item.reason}
-          request_teacher={item.request_teacher}
-          middle_teacher={item.middle_teacher}
-        />
-      ))}
+      <div>
+        <TitleList>
+          <p>날짜(요일)</p>
+          <p>사유</p>
+          <p>요청교사</p>
+          <p>부담임</p>
+        </TitleList>
+        {PlanWList.map((item) => (
+          <PlanWritingList
+            date={item.date}
+            reason={item.reason}
+            request_teacher={item.request_teacher}
+            middle_teacher={item.middle_teacher}
+          />
+        ))}
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding: 70px 165px;
-  margin-top: 30px;
+ padding-top: 70px;
+ padding-left: 165px;
+ padding-right: 160px;
+margin-top: 30px;
 `;
 
 const Header = styled.div`
@@ -49,7 +53,6 @@ const Header = styled.div`
     font: ${({ theme }) => theme.font.SemiBold32};
   }
 `;
-
 
 const AddButton = styled.button`
   width: 122px;
@@ -75,7 +78,6 @@ const TitleList = styled.div`
   justify-content: space-between;
   padding: 20px 47px;
   margin-top: 15px;
-
   p {
     font: ${({ theme }) => theme.font.SemiBold24};
     width: 125px;

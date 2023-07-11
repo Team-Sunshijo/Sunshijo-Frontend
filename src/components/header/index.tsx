@@ -82,7 +82,7 @@ const HeaderArea = styled.div`
   justify-content: space-between;
   padding: 25px 165px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  p,
+  p
   img,
   button {
     cursor: pointer;
