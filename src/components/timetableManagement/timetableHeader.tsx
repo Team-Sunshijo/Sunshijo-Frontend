@@ -133,7 +133,11 @@ const TimetableHeader = ({ plan, setPlan, stated, setStated }: Props) => {
               </SubText>
               <ButtonWrapper>
                 <Button onClick={handleCancel}>취소</Button>
-                <Button onClick={handleNext}>완료</Button>
+                {stated === "거절" ? (
+                  <Button onClick={handleNext}>완료</Button>
+                ) : (
+                  <Button>완료</Button>
+                )}
               </ButtonWrapper>
             </DefaultModal>
           )}
