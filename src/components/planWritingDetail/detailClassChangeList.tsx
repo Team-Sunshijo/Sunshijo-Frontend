@@ -57,14 +57,14 @@ const PlanClassChangeListBox = styled.div`
 const MainBeforeText = styled.div`
   font: ${({ theme }) => theme.font.Regular24};
   color: ${({ theme }) => theme.colors.Gray800};
-  width: 150px;
+  width: 200px;
   display: flex;
 `;
 
 const MainAfterText = styled.div`
   font: ${({ theme }) => theme.font.SemiBold24};
   color: ${({ theme }) => theme.colors.Gray800};
-  width: 150px;
+  width: 200px;
   display: flex;
 `;
 
@@ -81,7 +81,7 @@ const ChangeAfter = styled.div`
 `;
 
 const PlanClassChangeTeacherBox = styled.div`
-  padding: 75px 25px;
+  padding: 75px 0;
   width: 200px;
   height: 180px;
   border-radius: 0 8px 8px 0;
@@ -94,6 +94,7 @@ const PlanClassChangeTeacherBox = styled.div`
 const MainTeacherText = styled.div`
   font: ${({ theme }) => theme.font.SemiBold24};
   color: ${({ theme }) => theme.colors.Gray800};
+  margin-left: 40px;
 `;
 
 export default DetailClassChangeList;

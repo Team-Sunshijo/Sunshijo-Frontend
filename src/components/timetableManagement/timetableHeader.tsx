@@ -236,6 +236,7 @@ const RequestButton = styled.button`
   border: none;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

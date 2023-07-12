@@ -3,7 +3,7 @@ import { Alram } from "../../assets/icons";
 import DefaultModal from "../common/modal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { SunshijoLogo } from "../../assets/icons";
 
 const Header = () => {
 
@@ -25,11 +25,11 @@ const Header = () => {
 
   return (
     <HeaderArea>
-      <Logo  onClick={()=>{navigate("/main")}}>로고</Logo>
+      <Logo src={SunshijoLogo}onClick={()=>{navigate("/main")}}/>
       <Pages>
-      <p onClick={()=>{navigate("/planWriting")}}>시간표 변경</p>
-        <p onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</p>
-        <p onClick={()=>{navigate("/performance")}}>수행평가 등록</p>
+      <NavItem onClick={()=>{navigate("/planWriting")}}>시간표 변경</NavItem>
+        <NavItem onClick={()=>{navigate("/timetableManagement")}} >시간표 관리</NavItem>
+        <NavItem onClick={()=>{navigate("/performance")}}>수행평가 등록</NavItem>
         <img src={Alram} />
         <AcountButton onClick={openModal}>로그아웃</AcountButton>
         {isModalOpen && (
@@ -37,7 +37,7 @@ const Header = () => {
             <MainTitle>로그아웃 하시겠습니까?</MainTitle>
             <Div>
               <Button onClick={handleCancel}>취소</Button>
-              <Button onClick={()=>{navigate("/login")}}>로그아웃</Button>
+              <Button onClick={() => {navigate("/login"); handleCancel();}}>로그아웃</Button>
             </Div>
           </DefaultModal>
         )}
@@ -64,6 +64,28 @@ const Button = styled.button`
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
+  }
+`;
+
+const NavItem = styled.p`
+  position: relative;
+  cursor: pointer;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: ${({ theme }) => theme.colors.Main};
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+  &:hover:after,
+  &.active:after {
+    transform: scaleX(1);
   }
 `;
 
@@ -81,7 +103,7 @@ const HeaderArea = styled.div`
   justify-content: space-between;
   padding: 25px 165px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  p,
+  p
   img,
   button {
     cursor: pointer;
@@ -94,9 +116,10 @@ const Div = styled.div`
   gap: 45px;
 `;
 
-const Logo = styled.div`
+const Logo = styled.img`
   cursor: pointer;
-  /* 로고가 아직 없어서 div로 대체했습닌다.  */
+  width: 100px;
+ 
 `;
 
 const Pages = styled.div`
@@ -115,6 +138,7 @@ const AcountButton = styled.button`
   padding: 6px 12px;
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

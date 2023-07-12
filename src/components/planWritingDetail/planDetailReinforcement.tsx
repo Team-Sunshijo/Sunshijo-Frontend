@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import { ReinforcementList } from "../contance/index";
 import DetailReinforcementList from "./detailReinforcementList";
-import {useState } from "react";
+import { useState } from "react";
 import DefaultModal from "../common/modal";
 import Dropdown from "../common/dropDown";
 import Calendar from "../common/calender";
-import { gradeDropDownItem, classDropDownItem,timeDropDownItem, subjectDropDownItem} from "../../constant/dropDownType";
+import {
+  gradeDropDownItem,
+  classDropDownItem,
+  timeDropDownItem,
+  subjectDropDownItem,
+} from "../../constant/dropDownType";
 
 const PlanDetailReinforcement = () => {
-
   const [isModifyModalOpen, setIsModifyModalOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [selectedOption, setSelectedOption]=useState("");
+  const [selectedOption, setSelectedOption] = useState("");
 
   function openModifyModal() {
     setIsModifyModalOpen(true);
@@ -36,42 +40,52 @@ const PlanDetailReinforcement = () => {
 
   const handleDropdownOption = (option: string) => {
     setSelectedOption(option);
-   };
-  return(
+  };
+  return (
     <>
       <ListHeader>
         <TitleText>결 보강 계획서</TitleText>
         <ButtonsWrapper>
-          <ModifyButton onClick={openModifyModal}>계획서 수정</ModifyButton>
-          {isModifyModalOpen && <DefaultModal height={590} open={isModifyModalOpen} close={closeModifyModal}  >
-          <p>결보강 계획서 수정</p>
-    <div><Calendar/><Dropdown options={subjectDropDownItem} width={130} onClick={handleDropdownOption}/></div>
-  <DropContainer>
-    <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption} />
-    <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption}/>
-    <Dropdown options={timeDropDownItem} width={113} onClick={handleDropdownOption}/>
-  </DropContainer>
-  <PerformanceInput placeholder="보강 계획을 입력해주세요." />
-  <Div>
-    <Button onClick={handleCancel}>취소</Button>
-    <Button>등록</Button>
-  </Div>
-            </DefaultModal>}
           <AddButton onClick={openAddModal}>계획서 추가</AddButton>
-          {isAddModalOpen && <DefaultModal height={590} open={isAddModalOpen} close={closeAddModal}  >
-          <p>결보강 계획서 추가 </p>
-          <div><Calendar/><Dropdown options={subjectDropDownItem} width={130} onClick={handleDropdownOption}/></div>
-        <DropContainer>
-          <Dropdown options={gradeDropDownItem} width={113} onClick={handleDropdownOption}/>
-          <Dropdown options={classDropDownItem} width={113} onClick={handleDropdownOption} />
-          <Dropdown options={timeDropDownItem} width={113} onClick={handleDropdownOption} />
-        </DropContainer>
-        <PerformanceInput placeholder="보강 계획을 입력해주세요." />
-        <Div>
-          <Button onClick={handleCancel}>취소</Button>
-          <Button>등록</Button>
-        </Div>
-            </DefaultModal>}
+          {isAddModalOpen && (
+            <DefaultModal
+              height={590}
+              open={isAddModalOpen}
+              close={closeAddModal}
+            >
+              <p>결보강 계획서 추가 </p>
+              <div>
+                <Calendar />
+                <Dropdown
+                  options={subjectDropDownItem}
+                  width={130}
+                  onClick={handleDropdownOption}
+                />
+              </div>
+              <DropContainer>
+                <Dropdown
+                  options={gradeDropDownItem}
+                  width={113}
+                  onClick={handleDropdownOption}
+                />
+                <Dropdown
+                  options={classDropDownItem}
+                  width={113}
+                  onClick={handleDropdownOption}
+                />
+                <Dropdown
+                  options={timeDropDownItem}
+                  width={113}
+                  onClick={handleDropdownOption}
+                />
+              </DropContainer>
+              <PerformanceInput placeholder="보강 계획을 입력해주세요." />
+              <Div>
+                <Button onClick={handleCancel}>취소</Button>
+                <Button  onClick={handleCancel}>등록</Button>
+              </Div>
+            </DefaultModal>
+          )}
         </ButtonsWrapper>
       </ListHeader>
       <ReinforcementTitleList>
@@ -83,7 +97,7 @@ const PlanDetailReinforcement = () => {
         <MainText>보강교사</MainText>
       </ReinforcementTitleList>
       {ReinforcementList.map((item) => (
-        <DetailReinforcementList 
+        <DetailReinforcementList
           date={item.date}
           lesson={item.lesson}
           grade_class={item.grade_class}
@@ -96,31 +110,29 @@ const PlanDetailReinforcement = () => {
   );
 };
 
-const ButtonsWrapper=styled.div`
+const ButtonsWrapper = styled.div`
   display: flex;
-    margin-bottom: 15px;
-    gap: 45px;
+  margin-bottom: 15px;
+  gap: 45px;
 `;
 
-const Div=styled.div`
+const Div = styled.div`
   display: flex;
   justify-content: center;
   gap: 45px;
-  
 `;
 
 const ListHeader = styled.div`
   display: flex;
   margin-top: 50px;
   justify-content: space-between;
-  >div {
+  > div {
     display: flex;
   }
   p {
     color: ${({ theme }) => theme.colors.Black};
     font: ${({ theme }) => theme.font.SemiBold32};
     margin-bottom: 25px;
-  
   }
 `;
 
@@ -148,7 +160,8 @@ const ModifyButton = styled.button`
   line-height: 160%;
   color: ${({ theme }) => theme.colors.White};
   :hover {
-    background-color: ${({ theme }) => theme.colors.Main800};
+   background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -164,6 +177,7 @@ const AddButton = styled.button`
   color: ${({ theme }) => theme.colors.White};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -177,20 +191,20 @@ const ReinforcementTitleList = styled.div`
   margin-top: 15px;
 `;
 
-
-const Button=styled.button`
-    margin-top: 32px;
-    width: 109px;
-    height: 48px;
-    background-color: ${({ theme }) => theme.colors.Main};
-    border-radius: 8px;
-    border: none;
-    gap: 20px;
-    color: ${({ theme }) => theme.colors.White};
-    font: ${({ theme }) => theme.font.SemiBold16};
-    :hover {
-      background-color: ${({ theme }) => theme.colors.Main800}
-    }
+const Button = styled.button`
+  margin-top: 32px;
+  width: 109px;
+  height: 48px;
+  background-color: ${({ theme }) => theme.colors.Main};
+  border-radius: 8px;
+  border: none;
+  gap: 20px;
+  color: ${({ theme }) => theme.colors.White};
+  font: ${({ theme }) => theme.font.SemiBold16};
+  :hover {
+    background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
+  }
 `;
 
 const PerformanceInput = styled.textarea`
@@ -230,13 +244,11 @@ const PerformanceInput = styled.textarea`
   }
 `;
 
-const DropContainer=styled.div`
+const DropContainer = styled.div`
   display: flex;
   gap: 30px;
   margin-top: 25px;
   margin-right: auto;
 `;
-
-
 
 export default PlanDetailReinforcement;

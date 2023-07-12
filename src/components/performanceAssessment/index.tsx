@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { List } from "../contance";
 import { Notice } from "../contance";
 import PerformanceList from "./performancelist";
 import { useState } from "react";
@@ -7,6 +6,7 @@ import Dropdown from "../common/dropDown";
 import {
   gradeDropDownItem,
   classDropDownItem,
+  subjectDropDownItem,
 } from "../../constant/dropDownType";
 import Calendar from "../common/calender";
 import DefaultModal from "../common/modal";
@@ -54,6 +54,11 @@ const Performance = () => {
               />
               <Dropdown
                 options={classDropDownItem}
+                width={113}
+                onClick={handleDropdownOption}
+              />
+              <Dropdown
+                options={subjectDropDownItem}
                 width={113}
                 onClick={handleDropdownOption}
               />
@@ -109,6 +114,7 @@ const Button = styled.button`
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -182,6 +188,7 @@ const PerformanceAddButton = styled.button`
 
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 const TitleRow = styled.div`

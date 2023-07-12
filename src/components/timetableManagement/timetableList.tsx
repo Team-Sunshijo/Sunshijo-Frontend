@@ -46,11 +46,11 @@ const List = ({
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        <p>{date}</p>
-        <p>{grade_class}</p>
-        <p>{subject}</p>
-        <p>{reason}</p>
-        <p>{teacher}</p>
+        <Text>{date}</Text>
+        <Text>{grade_class}</Text>
+        <Text>{subject}</Text>
+        <Text>{reason}</Text>
+        <Text>{teacher}</Text>
         <StateText state={state}>{state}</StateText>
       </ListBox>
       {isRefuseReasonModal && (
@@ -91,20 +91,15 @@ const StateText = styled.div<{ state: string }>`
 `;
 
 const ListBox = styled.div<{ isChecked: boolean }>`
-  align-items: center;
+display: flex;
   height: 92px;
   border-radius: 8px;
   border: 1px solid
     ${({ isChecked }) => (isChecked ? theme.colors.Main : theme.colors.Gray300)};
   margin-top: 25px;
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 0 47px;
-
-  p {
-    font: ${({ theme }) => theme.font.Regular24};
-    color: ${({ theme }) => theme.colors.Gray900};
-  }
+justify-content: space-between;
   :hover {
     border-color: ${({ theme }) => theme.colors.Main};
   }
@@ -115,6 +110,11 @@ const ListBox = styled.div<{ isChecked: boolean }>`
     accent-color: ${({ theme }) => theme.colors.Main};
   }
 `;
+
+const Text=styled.div`
+   font: ${({ theme }) => theme.font.Regular24};
+    color: ${({ theme }) => theme.colors.Gray900};
+`
 
 const ButtonWrapper = styled.div`
   display: flex;

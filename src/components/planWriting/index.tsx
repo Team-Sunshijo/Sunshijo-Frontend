@@ -4,82 +4,68 @@ import PlanWritingList from "./planWritingList";
 import { useNavigate } from "react-router-dom";
 
 const PlanWriting = () => {
-
   const navigate = useNavigate();
-  
+
   return (
     <Container>
       <Header>
         <p>계획서 작성</p>
-        <div>
-          <ModifyButton>계획서 수정</ModifyButton>
-          <AddButton onClick={()=>{navigate("/planWritingDetail")}}>계획서 추가</AddButton>
-        </div>
+        <AddButton
+          onClick={() => {
+            navigate("/planWritingDetail");
+          }}
+        >
+          계획서 추가
+        </AddButton>
       </Header>
-      <TitleList>
-        <p>날짜(요일)</p>
-        <p>사유</p>
-        <p>요청교사</p>
-        <p>부담임</p>
-      </TitleList>
-      {PlanWList.map((item) => (
-        <PlanWritingList
-          date={item.date}
-          reason={item.reason}
-          request_teacher={item.request_teacher}
-          middle_teacher={item.middle_teacher}
-        />
-      ))}
+      <div>
+        <TitleList>
+          <p>날짜(요일)</p>
+          <p>사유</p>
+          <p>요청교사</p>
+          <p>부담임</p>
+        </TitleList>
+        {PlanWList.map((item) => (
+          <PlanWritingList
+            date={item.date}
+            reason={item.reason}
+            request_teacher={item.request_teacher}
+            middle_teacher={item.middle_teacher}
+          />
+        ))}
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding: 70px 165px;
-  margin-top: 30px;
+ padding-top: 70px;
+ padding-left: 165px;
+ padding-right: 160px;
+margin-top: 30px;
 `;
 
 const Header = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   p {
     font: ${({ theme }) => theme.font.SemiBold32};
   }
-  div {
-  }
-`;
-
-const ModifyButton = styled.button`
-  justify-content: center;
-  padding: 11px 24px;
-  width: 122px;
-  height: 48px;
-  background-color: ${({ theme }) => theme.colors.Main};
-  border: none;
-  border-radius: 8px;
-
-  font: ${({ theme }) => theme.font.SemiBold16};
-  line-height: 160%;
-  color: ${({ theme }) => theme.colors.White};
-  :hover {
-    background-color: ${({ theme }) => theme.colors.Main800};
-  }
 `;
 
 const AddButton = styled.button`
-  margin-left: 45px;
   width: 122px;
   height: 48px;
   background-color: ${({ theme }) => theme.colors.Main};
   border: none;
   border-radius: 8px;
-
   font: ${({ theme }) => theme.font.SemiBold16};
-  line-height: 160%;
+
   color: ${({ theme }) => theme.colors.White};
+
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 

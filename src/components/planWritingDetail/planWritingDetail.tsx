@@ -150,7 +150,8 @@ const MainList = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 74px;
-  padding: 22px 146px;
+  padding: 22px 0;
+  padding-left: 146px;
   background-color: ${({ theme }) => theme.colors.White};
   border: 1px solid ${({ theme }) => theme.colors.Main};
   border-radius: 0px 0px 8px 8px;
@@ -158,8 +159,8 @@ const MainList = styled.div`
 
 const Input = styled.input`
   font: ${({ theme }) => theme.font.Regular24};
-  justify-content: center;
   height: 24px;
+  width: 276px;
   border: 0;
   outline: none;
 `;
@@ -188,6 +189,7 @@ const BottomButton = styled.button`
   color: ${({ theme }) => theme.colors.White};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
@@ -203,6 +205,7 @@ const Button = styled.button`
   font: ${({ theme }) => theme.font.SemiBold16};
   :hover {
     background-color: ${({ theme }) => theme.colors.Main800};
+    transition: all 0.3s;
   }
 `;
 
